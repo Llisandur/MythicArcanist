@@ -1,0 +1,14 @@
+{
+  "NewSettingsOffByDefault": false,
+  "MythicAbilities": {
+    "DisableAll": false,
+    "Settings": {
+      "AbundantPreparation": {
+        "Enabled": true,
+        "Homebrew": true,
+        "Description": "Grants 4 additional praparation slots for arcanists."
+      }
+    },
+    "IsExpanded": true
+  }
+}
