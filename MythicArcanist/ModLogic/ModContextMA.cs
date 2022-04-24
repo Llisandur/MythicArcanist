@@ -19,15 +19,18 @@ namespace MythicArcanist.ModLogic
         {
             LoadSettings("Homebrew.json", "MythicArcanist.Config", ref Homebrew);
             LoadBlueprints("MythicArcanist.Config", this);
-            //LoadLocalization("MythicArcanist.Localization");
+            LoadLocalization("MythicArcanist.Localization");
         }
         public override void AfterBlueprintCachePatches()
         {
             base.AfterBlueprintCachePatches();
-            //Blueprints.RemoveUnused();
-            //SaveSettings(BlueprintsFile, Blueprints);
-            //ModLocalizationPack.RemoveUnused();
-            //SaveLocalization(ModLocalizationPack);
+            if(Debug)
+            {
+                //Blueprints.RemoveUnused();
+                //SaveSettings(BlueprintsFile, Blueprints);
+                //ModLocalizationPack.RemoveUnused();
+                //SaveLocalization(ModLocalizationPack);
+            }
         }
         public override void SaveAllSettings()
         {

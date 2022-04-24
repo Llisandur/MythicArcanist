@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<Import Project="..\packages\Aze.Publicise.MSBuild.Task.1.1.0\build\Aze.Publicise.MSBuild.Task.props" Condition="Exists('..\packages\Aze.Publicise.MSBuild.Task.1.1.0\build\Aze.Publicise.MSBuild.Task.props')" />
-	<Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+	<!--Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" /-->
 
 	<PropertyGroup>
     <LangVersion>latest</LangVersion>
@@ -24,8 +24,24 @@
   </PropertyGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="if $(ConfigurationName) == Debug (powershell -Command &quot;Get-ChildItem -Path '$(TargetDir)' -Recurse|Compress-Archive -DestinationPath '$(SolutionDir)\bin\$(ConfigurationName)\$(ProjectName).zip' -Force&quot;)" />
+    <Exec Command="if $(ConfigurationName) == Debug (powershell -Command &quot;Get-ChildItem -Path '$(TargetDir)'|Compress-Archive -DestinationPath '$(SolutionDir)\bin\$(ConfigurationName)\$(ProjectName).zip' -Force&quot;)" />
   </Target>
+
+  <ItemGroup>
+    <None Remove="Config\Blueprints.json" />
+    <None Remove="Config\Homebrew.json" />
+    <None Remove="Localization\LocalizationPack.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Config\Blueprints.json" />
+    <EmbeddedResource Include="Config\Homebrew.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Localization\LocalizationPack.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Aze.Publicise.MSBuild.Task" Version="1.1.0">
@@ -48,6 +64,10 @@
     <Reference Include="Assembly-CSharp-firstpass">
       <HintPath>$(WrathPath)\Wrath_Data\Managed\Assembly-CSharp-firstpass.dll</HintPath>
       <Private>false</Private>
+      <CopyLocal>False</CopyLocal>
+    </Reference>
+    <Reference Include="Owlcat.Runtime.Core">
+      <HintPath>$(WrathPath)\Wrath_Data\Managed\Owlcat.Runtime.Core.dll</HintPath>
       <CopyLocal>False</CopyLocal>
     </Reference>
     <Reference Include="TabletopTweaks-Core">
@@ -88,9 +108,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Config\Homebrew.json">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </None>
     <None Update="Info.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

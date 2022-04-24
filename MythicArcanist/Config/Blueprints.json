@@ -1,8 +1,7 @@
 {
   "OverrideIds": false,
-  "NewBlueprints":
-  {
-    "AbundantPreparationFeature": "d463cc5c-a16d-48f1-96b1-c07a1219dffd"
+  "NewBlueprints": {
+    "AbundantPreparationFeature": "ec6fb9a0-91d0-4ee8-b34e-b75f83c505bc"
   },
   "DerivedBlueprintMasters": {},
   "DerivedBlueprints": {},

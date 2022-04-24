@@ -28,7 +28,7 @@ namespace MythicArcanist
                 UI.Toggle("New Settings Off By Default".bold(), ref Homebrew.NewSettingsOffByDefault);
                 UI.Space(25);
 
-                //SetttingUI.SettingGroup("Feats", TabLevel, Homebrew.Feats);
+                SetttingUI.SettingGroup("Feats", TabLevel, Homebrew.Feats);
                 SetttingUI.SettingGroup("Mythic Abilties", TabLevel, Homebrew.MythicAbilities);
                 //SetttingUI.SettingGroup("Mythic Feats", TabLevel, Homebrew.MythicFeats);
             }

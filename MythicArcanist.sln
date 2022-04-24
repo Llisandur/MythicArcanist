@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.32407.337
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32414.318
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MythicArcanist", "MythicArcanist.csproj", "{9E514EE5-EA3E-4946-B5C4-DE565ED3BC34}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MythicArcanist", "MythicArcanist\MythicArcanist.csproj", "{9E514EE5-EA3E-4946-B5C4-DE565ED3BC34}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

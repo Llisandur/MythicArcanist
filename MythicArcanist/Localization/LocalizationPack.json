@@ -1,0 +1,26 @@
+﻿{
+  "LocalizedStrings": [
+    {
+      "Key": "a0d2f95a444249ee92072257c526678d",
+      "SimpleName": "AbundantPreparationFeature.Description",
+      "ProcessTemplates": true,
+      "enGB": "You've learned a way to increase the number of spells you can prepare per day.\nBenefit: You can prepare four more spells per day of 1st, 2nd, and 3rd ranks each. This ability does only affects arcanist spellbooks.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "2cd32db46f754d1cba5e89fdb8b8dced",
+      "SimpleName": "AbundantPreparationFeature.Name",
+      "ProcessTemplates": false,
+      "enGB": "Abundant Preparation",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    }
+  ]
+}

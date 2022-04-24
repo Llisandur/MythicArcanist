@@ -18,6 +18,8 @@ namespace MythicArcanist.NewContent
                 Initialized = true;
                 MAContext.Logger.LogHeader("Loading New Content");
 
+                Feats.ExtraMythicAbility.AddExtraMythicAbility();
+                Feats.ExtraMythicFeat.AddExtraMythicFeat();
                 MythicAbilities.AbundantPreparation.AddAbundantPreparation();
             }
         }

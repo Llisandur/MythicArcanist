@@ -13,7 +13,7 @@ namespace MythicArcanist
         {
             var harmony = new Harmony(modEntry.Info.Id);
             MAContext = new ModContextMA(modEntry);
-            MAContext.LoadAllSettings();
+            //MAContext.LoadAllSettings();
             MAContext.ModEntry.OnSaveGUI = OnSaveGUI;
             MAContext.ModEntry.OnGUI = UMMSettingsUI.OnGUI;
             harmony.PatchAll();
