@@ -13,16 +13,53 @@
         "Homebrew": true,
         "Description": "Adds Extra Mythic Feat as a normal feat."
       }
-    },
-    "MythicAbilities": {
+    }
+  },
+  "MythicAbilities": {
+    "DisableAll": false,
+    "Settings": {
+      "AbundantPreparation": {
+        "Enabled": true,
+        "Homebrew": true,
+        "Description": "Adds a mythic ability that grants 4 additional praparation slots for arcanists for 1st, 2nd, and 3rd levels."
+      },
+      "AbundantPreparationImproved": {
+        "Enabled": true,
+        "Homebrew": true,
+        "Description": "Adds a mythic ability that grants 4 additional praparation slots for arcanists for 4th, 5th, and 6th levels."
+      },
+      "AbundantPreparationGreater": {
+        "Enabled": true,
+        "Homebrew": true,
+        "Description": "Adds a mythic ability that grants 4 additional praparation slots for arcanists for 7th, 8th, and 9th levels."
+      }
+    }
+  },
+    "Spells": {
       "DisableAll": false,
       "Settings": {
-        "AbundantPreparation": {
+        "MageArmor2": {
           "Enabled": true,
           "Homebrew": true,
-          "Description": "Adds a mythic ability that grants 4 additional praparation slots for arcanists."
+          "Description": "Adds a new spell Mage Armor II that grants +6 AC."
+        },
+        "MageArmor3": {
+          "Enabled": true,
+          "Homebrew": true,
+          "Description": "Adds a new spell Mage Armor III that grants +8 AC."
+        },
+        "MageArmor4": {
+          "Enabled": true,
+          "Homebrew": true,
+          "Description": "Adds a new spell Mage Armor IV that grants +10 AC."
+        },
+        "MageShield2": {
+          "Enabled": true,
+          "Homebrew": true,
+          "Description": "Adds a new spell Shield II that lasts for an hour per level."
         }
-      },
-      "IsExpanded": true
+      }
     }
-  }
+  },
+  "IsExpanded": true
+}

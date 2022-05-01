@@ -21,6 +21,12 @@ namespace MythicArcanist.NewContent
                 Feats.ExtraMythicAbility.AddExtraMythicAbility();
                 Feats.ExtraMythicFeat.AddExtraMythicFeat();
                 MythicAbilities.AbundantPreparation.AddAbundantPreparation();
+                MythicAbilities.AbundantPreparationImproved.AddAbundantPreparationImproved();
+                MythicAbilities.AbundantPreparationGreater.AddAbundantPreparationGreater();
+                Spells.MageArmor2.AddMageArmor2();
+                Spells.MageArmor3.AddMageArmor3();
+                Spells.MageArmor4.AddMageArmor4();
+                Spells.MageShield2.AddMageShield2();
             }
         }
     }

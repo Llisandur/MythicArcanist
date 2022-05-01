@@ -8,18 +8,19 @@ using static MythicArcanist.Main;
 
 namespace MythicArcanist.NewContent.MythicAbilities
 {
-    static class AbundantPreparation
+    static class AbundantPreparationImproved
     {
-        public static void AddAbundantPreparation()
+        public static void AddAbundantPreparationImproved()
         {
             var ArcanistClass = BlueprintTools.GetBlueprint<BlueprintCharacterClass>("52dbfd8505e22f84fad8d702611f60b7");
             var icon = AssetLoader.LoadInternal(MAContext, folder: "MythicAbilities", file: "Icon_AbundantPreparation.png");
+            var AbundantPreparation = BlueprintTools.GetModBlueprint<BlueprintFeature>(MAContext, "AbundantPreparationFeature");
 
-            var AbundantPreparationFeature = Helpers.CreateBlueprint<BlueprintFeature>(MAContext, "AbundantPreparationFeature", bp =>
+            var AbundantPreparationImprovedFeature = Helpers.CreateBlueprint<BlueprintFeature>(MAContext, "AbundantPreparationImprovedFeature", bp =>
             {
-                bp.SetName(MAContext, "Abundant Preparation");
-                bp.SetDescription(MAContext, "You've learned a way to increase the number of {g|Encyclopedia:Spell}spells{/g} you can prepare per day.\n" +
-                    "Benefit: You can prepare four more spells per day of 1st, 2nd, and 3rd levels each. This ability only affects arcanist spellbooks.");
+                bp.SetName(MAContext, "Improved Abundant Preparation");
+                bp.SetDescription(MAContext, "You've studied a way to increase the number of {g|Encyclopedia:Spell}spells{/g} you can prepare per day.\n" +
+                    "Benefit: You can prepare four more spells per day of 4th, 5th, and 6th levels each. This ability only affects arcanist spellbooks.");
                 bp.m_Icon = icon;
                 bp.Ranks = 1;
                 bp.IsClassFeature = true;
@@ -30,7 +31,7 @@ namespace MythicArcanist.NewContent.MythicAbilities
                     c.Amount = 4;
                     //c.MinLevel = 1;
                     //c.MaxLevel = 3;
-                    c.Levels = new int[] { 1, 2, 3 };
+                    c.Levels = new int[] { 4, 5, 6 };
                 });
                 bp.AddPrerequisites(Helpers.Create<PrerequisiteClassLevel>(c =>
                 {
@@ -39,13 +40,13 @@ namespace MythicArcanist.NewContent.MythicAbilities
                 }));
                 bp.IsPrerequisiteFor = new List<BlueprintFeatureReference>()
                 {
-                    BlueprintTools.GetModBlueprint<BlueprintFeature>(MAContext, "AbundantPreparationImprovedFeature").ToReference<BlueprintFeatureReference>(),
                     BlueprintTools.GetModBlueprint<BlueprintFeature>(MAContext, "AbundantPreparationGreaterFeature").ToReference<BlueprintFeatureReference>()
                 };
+                bp.AddPrerequisiteFeature(AbundantPreparation);
             });
 
-            if (MAContext.Homebrew.MythicAbilities.IsDisabled("AbundantPreparation")) { return; }
-            FeatTools.AddAsMythicAbility(AbundantPreparationFeature);
+            if (MAContext.Homebrew.MythicAbilities.IsDisabled("AbundantPreparationImproved")) { return; }
+            FeatTools.AddAsMythicAbility(AbundantPreparationImprovedFeature);
         }
     }
 }

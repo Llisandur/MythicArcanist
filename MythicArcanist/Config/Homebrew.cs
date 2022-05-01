@@ -8,6 +8,7 @@ namespace MythicArcanist.Config
         public SettingGroup Feats = new SettingGroup();
         public SettingGroup MythicAbilities = new SettingGroup();
         //public SettingGroup MythicFeats = new SettingGroup();
+        public SettingGroup Spells = new SettingGroup();
 
         public void Init()
         {
@@ -21,6 +22,7 @@ namespace MythicArcanist.Config
             Feats.LoadSettingGroup(loadedSettings.Feats, NewSettingsOffByDefault);
             MythicAbilities.LoadSettingGroup(loadedSettings.MythicAbilities, NewSettingsOffByDefault);
             //MythicFeats.LoadSettingGroup(loadedSettings.MythicFeats, NewSettingsOffByDefault);
+            Spells.LoadSettingGroup(loadedSettings.Spells, NewSettingsOffByDefault);
         }
     }
 }

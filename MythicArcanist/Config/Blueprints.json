@@ -1,7 +1,22 @@
 {
   "OverrideIds": false,
   "NewBlueprints": {
-    "AbundantPreparationFeature": "ec6fb9a0-91d0-4ee8-b34e-b75f83c505bc"
+    "AbundantPreparationFeature": "ec6fb9a0-91d0-4ee8-b34e-b75f83c505bc",
+    "AbundantPreparationGreaterFeature": "5d31e34c-1846-46df-bf40-7a77e8bb29eb",
+    "AbundantPreparationImprovedFeature": "e4b53671-0563-49fd-ad00-fbf948c4cd68",
+    "ExtraMythicAbility": "4d6ec9e9-771a-46ee-89fb-3eef3d4fccc2",
+    "ExtraMythicFeat": "cc679822-134b-4531-b8f8-c7fe14d2dbaf",
+    "MageArmor2": "247d983c-8ca0-4197-bb2a-1be55ce1d982",
+    "MageArmor2Buff": "f59bea40-2380-4838-bd5c-86608dd40081",
+    "MageArmor2BuffMythic": "fff20d2e-3e73-4c0d-9bec-775ebb31b0bf",
+    "MageArmor3": "fdf0f15e-ab73-4197-84f2-07ddcbdae4cf",
+    "MageArmor3Buff": "e9c795ae-a6c7-41a7-b3e4-25c52aa2674c",
+    "MageArmor3BuffMythic": "881ad523-f035-4c0c-b580-ed9f08ca7070",
+    "MageArmor4": "3533d9e7-3bfa-4d6e-9bc4-4b5469d00f40",
+    "MageArmor4Buff": "9052af53-d26e-469c-b2fe-8f7111dfe7d9",
+    "MageArmor4BuffMythic": "3ba9865a-eb6e-4209-9524-7d925780c7f1",
+    "MageShield2": "d335fac6-2f85-48c9-a717-810c96eeb658",
+    "MageShield2Buff": "1b4d81f7-aa74-480f-867f-7f21757c5d89"
   },
   "DerivedBlueprintMasters": {},
   "DerivedBlueprints": {},

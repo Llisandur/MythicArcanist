@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <OutputPath>Bin\Debug\MythicArcanist</OutputPath>
+    <OutputPath>Bin\Debug\$(ProjectName)</OutputPath>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
@@ -17,14 +17,14 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <OutputPath>Bin\Release\MythicArcanist</OutputPath>
+    <OutputPath>Bin\Release\$(ProjectName)</OutputPath>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="if $(ConfigurationName) == Debug (powershell -Command &quot;Get-ChildItem -Path '$(TargetDir)'|Compress-Archive -DestinationPath '$(SolutionDir)\bin\$(ConfigurationName)\$(ProjectName).zip' -Force&quot;)" />
+	  <Exec Command="if $(ConfigurationName) == Debug (powershell -Command &quot;Get-ChildItem -Path '$(TargetDir)'|Compress-Archive -DestinationPath '$(TargetDir)..\$(ProjectName)_debug.zip' -Force&quot;)&#xD;&#xA;if $(ConfigurationName) == Release (powershell -Command &quot;Get-ChildItem -Path '$(TargetDir)'|Compress-Archive -DestinationPath '$(TargetDir)..\$(ProjectName).zip' -Force&quot;)" />
   </Target>
 
   <ItemGroup>
@@ -68,6 +68,7 @@
     </Reference>
     <Reference Include="Owlcat.Runtime.Core">
       <HintPath>$(WrathPath)\Wrath_Data\Managed\Owlcat.Runtime.Core.dll</HintPath>
+		<Private>false</Private>
       <CopyLocal>False</CopyLocal>
     </Reference>
     <Reference Include="TabletopTweaks-Core">
@@ -108,6 +109,21 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="Assets\MythicAbilities\Icon_AbundantPreparation.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Assets\Spells\Icon_MageArmor2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Assets\Spells\Icon_MageArmor3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Assets\Spells\Icon_MageArmor4.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Assets\Spells\Icon_MageShield2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Info.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -174,6 +190,10 @@
       <Private>false</Private>
       <CopyLocal>False</CopyLocal>
     </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Assets\MythicAbilities\" />
   </ItemGroup>
 
 	<Target Name="RemoveLib" BeforeTargets="Clean" Condition="Exists('$(SolutionDir)lib')">

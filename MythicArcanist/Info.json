@@ -2,7 +2,7 @@
   "Id": "MythicArcanist",
   "DisplayName": "Mythic Arcanist",
   "Author": "Llisandur",
-  "Version": "0.2.0",
+  "Version": "1.0.0",
   "ManagerVersion": "0.24.1",
   "Requirements": [ "TabletopTweaks-Core" ],
   "LoadAfter": [ "TabletopTweaks-Core" ],
