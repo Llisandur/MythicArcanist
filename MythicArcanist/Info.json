@@ -2,10 +2,12 @@
   "Id": "MythicArcanist",
   "DisplayName": "Mythic Arcanist",
   "Author": "Llisandur",
-  "Version": "1.0.0",
+  "Version": "1.0.6",
   "ManagerVersion": "0.24.1",
   "Requirements": [ "TabletopTweaks-Core" ],
   "LoadAfter": [ "TabletopTweaks-Core" ],
   "AssemblyName": "MythicArcanist.dll",
-  "EntryMethod": "MythicArcanist.Main.Load"
+  "EntryMethod": "MythicArcanist.Main.Load",
+  "HomePage": "https://github.com/Llisandur/MythicArcanist/releases",
+  "Repository": "https://raw.githubusercontent.com/Llisandur/MythicArcanist/master/Repository.json"
 }

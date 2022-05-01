@@ -31,6 +31,7 @@ namespace MythicArcanist
                 SetttingUI.SettingGroup("Feats", TabLevel, Homebrew.Feats);
                 SetttingUI.SettingGroup("Mythic Abilties", TabLevel, Homebrew.MythicAbilities);
                 //SetttingUI.SettingGroup("Mythic Feats", TabLevel, Homebrew.MythicFeats);
+                SetttingUI.SettingGroup("Spells", TabLevel, Homebrew.Spells);
             }
         }
     }

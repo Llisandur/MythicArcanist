@@ -39,8 +39,8 @@ namespace MythicArcanist.NewContent.MythicAbilities
                 }));
                 bp.IsPrerequisiteFor = new List<BlueprintFeatureReference>()
                 {
-                    BlueprintTools.GetModBlueprint<BlueprintFeature>(MAContext, "AbundantPreparationImprovedFeature").ToReference<BlueprintFeatureReference>(),
-                    BlueprintTools.GetModBlueprint<BlueprintFeature>(MAContext, "AbundantPreparationGreaterFeature").ToReference<BlueprintFeatureReference>()
+                    //BlueprintTools.GetModBlueprint<BlueprintFeature>(MAContext, "AbundantPreparationImprovedFeature").ToReference<BlueprintFeatureReference>(),
+                    //BlueprintTools.GetModBlueprint<BlueprintFeature>(MAContext, "AbundantPreparationGreaterFeature").ToReference<BlueprintFeatureReference>()
                 };
             });
 

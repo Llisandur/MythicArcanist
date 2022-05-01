@@ -4,12 +4,12 @@
     "DisableAll": false,
     "Settings": {
       "ExtraMythicAbility": {
-        "Enabled": true,
+        "Enabled": false,
         "Homebrew": true,
         "Description": "Adds Extra Mythic Ability as a normal feat."
       },
       "ExtraMythicFeat": {
-        "Enabled": true,
+        "Enabled": false,
         "Homebrew": true,
         "Description": "Adds Extra Mythic Feat as a normal feat."
       }
@@ -35,29 +35,28 @@
       }
     }
   },
-    "Spells": {
-      "DisableAll": false,
-      "Settings": {
-        "MageArmor2": {
-          "Enabled": true,
-          "Homebrew": true,
-          "Description": "Adds a new spell Mage Armor II that grants +6 AC."
-        },
-        "MageArmor3": {
-          "Enabled": true,
-          "Homebrew": true,
-          "Description": "Adds a new spell Mage Armor III that grants +8 AC."
-        },
-        "MageArmor4": {
-          "Enabled": true,
-          "Homebrew": true,
-          "Description": "Adds a new spell Mage Armor IV that grants +10 AC."
-        },
-        "MageShield2": {
-          "Enabled": true,
-          "Homebrew": true,
-          "Description": "Adds a new spell Shield II that lasts for an hour per level."
-        }
+  "Spells": {
+    "DisableAll": false,
+    "Settings": {
+      "MageArmor2": {
+        "Enabled": true,
+        "Homebrew": true,
+        "Description": "Adds a new spell Mage Armor II that grants +6 AC."
+      },
+      "MageArmor3": {
+        "Enabled": true,
+        "Homebrew": true,
+        "Description": "Adds a new spell Mage Armor III that grants +8 AC."
+      },
+      "MageArmor4": {
+        "Enabled": true,
+        "Homebrew": true,
+        "Description": "Adds a new spell Mage Armor IV that grants +10 AC."
+      },
+      "MageShield2": {
+        "Enabled": true,
+        "Homebrew": true,
+        "Description": "Adds a new spell Shield II that lasts for an hour per level."
       }
     }
   },

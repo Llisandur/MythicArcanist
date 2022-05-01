@@ -1,18 +1,7 @@
 ﻿{
   "LocalizedStrings": [
     {
-      "Key": "a0d2f95a444249ee92072257c526678d",
-      "SimpleName": "AbundantPreparationFeature.Description",
-      "ProcessTemplates": true,
-      "enGB": "You've learned a way to increase the number of spells you can prepare per day.\nBenefit: You can prepare four more spells per day of 1st, 2nd, and 3rd ranks each. This ability does only affects arcanist spellbooks.",
-      "ruRU": null,
-      "deDE": null,
-      "frFR": null,
-      "zhCN": null,
-      "esES": null
-    },
-    {
-      "Key": "7913ac28ae3843cd95c5b82ddb334ca8",
+      "Key": "74b2ca59898048839567a77221f08555",
       "SimpleName": "AbundantPreparationFeature.Description",
       "ProcessTemplates": true,
       "enGB": "You've learned a way to increase the number of spells you can prepare per day.\nBenefit: You can prepare four more spells per day of 1st, 2nd, and 3rd levels each. This ability only affects arcanist spellbooks.",
@@ -23,7 +12,7 @@
       "esES": null
     },
     {
-      "Key": "2cd32db46f754d1cba5e89fdb8b8dced",
+      "Key": "0cf509492d92435386fa8072c7e6c7ea",
       "SimpleName": "AbundantPreparationFeature.Name",
       "ProcessTemplates": false,
       "enGB": "Abundant Preparation",
@@ -34,7 +23,7 @@
       "esES": null
     },
     {
-      "Key": "4360a94d23b54251af677bbb81f7e80b",
+      "Key": "5b970e8afd174d0cbd01e29e4885c045",
       "SimpleName": "AbundantPreparationGreaterFeature.Description",
       "ProcessTemplates": true,
       "enGB": "You've mastered a way to increase the number of spells you can prepare per day.\nBenefit: You can prepare four more spells per day of 7th, 8th, and 9th levels each. This ability only affects arcanist spellbooks.",
@@ -45,7 +34,7 @@
       "esES": null
     },
     {
-      "Key": "4dbc4141be0b4373a892f1cd62eb51a1",
+      "Key": "38b934879c7d4470843acca44e728bfa",
       "SimpleName": "AbundantPreparationGreaterFeature.Name",
       "ProcessTemplates": false,
       "enGB": "Greater Abundant Preparation",
@@ -56,7 +45,7 @@
       "esES": null
     },
     {
-      "Key": "03f6b53dd0a74780ba12d66077b9fb1c",
+      "Key": "4bc62722db0a42d48af4f8174c45ade3",
       "SimpleName": "AbundantPreparationImprovedFeature.Description",
       "ProcessTemplates": true,
       "enGB": "You've studied a way to increase the number of spells you can prepare per day.\nBenefit: You can prepare four more spells per day of 4th, 5th, and 6th levels each. This ability only affects arcanist spellbooks.",
@@ -67,7 +56,7 @@
       "esES": null
     },
     {
-      "Key": "dd74408603a94b819cb2a01c65bfe9e6",
+      "Key": "69db21f2d4df4d4cb8c7422fb797cfe3",
       "SimpleName": "AbundantPreparationImprovedFeature.Name",
       "ProcessTemplates": false,
       "enGB": "Improved Abundant Preparation",
@@ -78,7 +67,7 @@
       "esES": null
     },
     {
-      "Key": "c17d01fe80f747d8a0c1341fb125da20",
+      "Key": "b014e98f1a1d404f84dc8b26309cace2",
       "SimpleName": "ExtraMythicAbility.Description",
       "ProcessTemplates": true,
       "enGB": "You gain one additional mythic ability. You must meet the prerequisites for this mythic ability.\nYou can take this feat multiple times. Each time you do, you gain another mythic ability.",
@@ -89,7 +78,7 @@
       "esES": null
     },
     {
-      "Key": "5d0116873071427aa6792657ccef6872",
+      "Key": "dcb5c6ae84dd46f19419c6fd6de1a75b",
       "SimpleName": "ExtraMythicAbility.Name",
       "ProcessTemplates": false,
       "enGB": "Extra Mythic Ability",
@@ -100,7 +89,7 @@
       "esES": null
     },
     {
-      "Key": "c04f5758a6094034967ff06cfa9bdcc3",
+      "Key": "e79641a12b52422f832eb597a5c6525c",
       "SimpleName": "ExtraMythicFeat.Description",
       "ProcessTemplates": true,
       "enGB": "You gain one additional mythic feat. You must meet the prerequisites for this mythic feat.\nYou can take this feat multiple times. Each time you do, you gain another mythic feat.",
@@ -111,7 +100,7 @@
       "esES": null
     },
     {
-      "Key": "2f9e4d4f640a4ae18f145df88f6b3be9",
+      "Key": "9d7123fa495e4103bb650a4e8a82241c",
       "SimpleName": "ExtraMythicFeat.Name",
       "ProcessTemplates": false,
       "enGB": "Extra Mythic Feat",
@@ -122,10 +111,10 @@
       "esES": null
     },
     {
-      "Key": "ac1c0604adbf4be581a90f444341e21d",
+      "Key": "8401353a63c04062bd4e3fffe53b625a",
       "SimpleName": "MageArmor2.Description",
       "ProcessTemplates": true,
-      "enGB": "This spell functions like mage armor except you gain a +6 armor bonus. This bonus does not stack with other sources that grant an armor bonus.",
+      "enGB": "This spell functions like mage armor except you gain a +6 armor bonus. This bonus does not stack with other sources that grant an armor bonus.[LONGSTART]\n\nAn invisible but tangible field of force surrounds the subject of a mage armor spell, providing a +4 armor bonus to AC.\nUnlike mundane armor, mage armor entails no armor check penalty, arcane spell failure chance. or speed redution. Since mage armor is made of force, incorporeal creatures can't bypass it the way they do normal amror.[LONGEND]",
       "ruRU": null,
       "deDE": null,
       "frFR": null,
@@ -133,10 +122,10 @@
       "esES": null
     },
     {
-      "Key": "154d49b66aa94420a8be1a27c0b823a1",
+      "Key": "25ab2832904944f7ba57eb49d451c535",
       "SimpleName": "MageArmor2Buff.Description",
       "ProcessTemplates": true,
-      "enGB": "This spell functions like mage armor except you gain a +6 armor bonus. This bonus does not stack with other sources that grant an armor bonus.",
+      "enGB": "This spell functions like mage armor except you gain a +6 armor bonus. This bonus does not stack with other sources that grant an armor bonus.[LONGSTART]\n\nAn invisible but tangible field of force surrounds the subject of a mage armor spell, providing a +4 armor bonus to AC.\nUnlike mundane armor, mage armor entails no armor check penalty, arcane spell failure chance. or speed redution. Since mage armor is made of force, incorporeal creatures can't bypass it the way they do normal amror.[LONGEND]",
       "ruRU": null,
       "deDE": null,
       "frFR": null,
@@ -144,7 +133,7 @@
       "esES": null
     },
     {
-      "Key": "5f6a7fe5e57e4cb5a290068594cf7310",
+      "Key": "7e56ea021967457eaed347402633c391",
       "SimpleName": "MageArmor2Buff.Name",
       "ProcessTemplates": false,
       "enGB": "Mage Armor II",
@@ -155,10 +144,10 @@
       "esES": null
     },
     {
-      "Key": "c765f625d0b9459ea807d2fc032746cb",
+      "Key": "2b0070be11a04c62bb8b947fc4f283ea",
       "SimpleName": "MageArmor3.Description",
       "ProcessTemplates": true,
-      "enGB": "This spell functions like mage armor except you gain a +8 armor bonus. This bonus does not stack with other sources that grant an armor bonus.",
+      "enGB": "This spell functions like mage armor except you gain a +8 armor bonus. This bonus does not stack with other sources that grant an armor bonus.[LONGSTART]\n\nAn invisible but tangible field of force surrounds the subject of a mage armor spell, providing a +4 armor bonus to AC.\nUnlike mundane armor, mage armor entails no armor check penalty, arcane spell failure chance. or speed redution. Since mage armor is made of force, incorporeal creatures can't bypass it the way they do normal amror.[LONGEND]",
       "ruRU": null,
       "deDE": null,
       "frFR": null,
@@ -166,10 +155,10 @@
       "esES": null
     },
     {
-      "Key": "e99eb55c00bd4ae0a859b8acade92b72",
+      "Key": "f779cef55d024eb8b36e75e4a4866798",
       "SimpleName": "MageArmor3Buff.Description",
       "ProcessTemplates": true,
-      "enGB": "This spell functions like mage armor except you gain a +8 armor bonus. This bonus does not stack with other sources that grant an armor bonus.",
+      "enGB": "This spell functions like mage armor except you gain a +8 armor bonus. This bonus does not stack with other sources that grant an armor bonus.[LONGSTART]\n\nAn invisible but tangible field of force surrounds the subject of a mage armor spell, providing a +4 armor bonus to AC.\nUnlike mundane armor, mage armor entails no armor check penalty, arcane spell failure chance. or speed redution. Since mage armor is made of force, incorporeal creatures can't bypass it the way they do normal amror.[LONGEND]",
       "ruRU": null,
       "deDE": null,
       "frFR": null,
@@ -177,7 +166,7 @@
       "esES": null
     },
     {
-      "Key": "a2d8d423774d4ae3a41fc8c121c86c2e",
+      "Key": "546bdd608e354152a989167a633549ed",
       "SimpleName": "MageArmor3Buff.Name",
       "ProcessTemplates": false,
       "enGB": "Mage Armor III",
@@ -188,10 +177,10 @@
       "esES": null
     },
     {
-      "Key": "beca29f21c7141c3b4cd9706197a6cab",
+      "Key": "4ce2ed5202c9436fa6e9ed4d019347c2",
       "SimpleName": "MageArmor4.Description",
       "ProcessTemplates": true,
-      "enGB": "This spell functions like mage armor except you gain a +10 armor bonus. This bonus does not stack with other sources that grant an armor bonus.",
+      "enGB": "This spell functions like mage armor except you gain a +10 armor bonus. This bonus does not stack with other sources that grant an armor bonus.[LONGSTART]\n\nAn invisible but tangible field of force surrounds the subject of a mage armor spell, providing a +4 armor bonus to AC.\nUnlike mundane armor, mage armor entails no armor check penalty, arcane spell failure chance. or speed redution. Since mage armor is made of force, incorporeal creatures can't bypass it the way they do normal amror.[LONGEND]",
       "ruRU": null,
       "deDE": null,
       "frFR": null,
@@ -199,10 +188,10 @@
       "esES": null
     },
     {
-      "Key": "22fce6060e9c40ac8d84a2b2570da616",
+      "Key": "a72d41915b3248489bfa07baa6704e6a",
       "SimpleName": "MageArmor4Buff.Description",
       "ProcessTemplates": true,
-      "enGB": "This spell functions like mage armor except you gain a +10 armor bonus. This bonus does not stack with other sources that grant an armor bonus.",
+      "enGB": "This spell functions like mage armor except you gain a +10 armor bonus. This bonus does not stack with other sources that grant an armor bonus.[LONGSTART]\n\nAn invisible but tangible field of force surrounds the subject of a mage armor spell, providing a +4 armor bonus to AC.\nUnlike mundane armor, mage armor entails no armor check penalty, arcane spell failure chance. or speed redution. Since mage armor is made of force, incorporeal creatures can't bypass it the way they do normal amror.[LONGEND]",
       "ruRU": null,
       "deDE": null,
       "frFR": null,
@@ -210,7 +199,7 @@
       "esES": null
     },
     {
-      "Key": "40f8eb7543504a46baa7311dd601154f",
+      "Key": "c810f70f75db4d869b3fe6376614d78a",
       "SimpleName": "MageArmor4Buff.Name",
       "ProcessTemplates": false,
       "enGB": "Mage Armor IV",
@@ -221,10 +210,10 @@
       "esES": null
     },
     {
-      "Key": "8e8ec21c6f08499593d29d6615a5b75f",
+      "Key": "d088e69128cd4802a8e8076b961f0172",
       "SimpleName": "MageShield2.Description",
       "ProcessTemplates": true,
-      "enGB": "This spell functions like shield, but its duration is longer and it can be employed like a tower shield for cover.[LONGSTART]\n\nShield creates an invisible shield of force that hovers in front of you. It negates magic missile attacks directed at you. The disk als oprovides a +4 shield bonus to AC. This bonus applies against incorporeal touch attacks, since it is a force effect. The shield has no armor check penalty or arcane spell failure</g}.[LONGEND]",
+      "enGB": "This spell functions like shield, but its duration is longer and it can be employed like a tower shield for cover.[LONGSTART]\n\nShield creates an invisible shield of force that hovers in front of you. It negates magic missile attacks directed at you. The disk als oprovides a +4 shield bonus to AC. This bonus applies against incorporeal touch attacks, since it is a force effect. The shield has no armor check penalty or arcane spell failure.[LONGEND]",
       "ruRU": null,
       "deDE": null,
       "frFR": null,
@@ -232,7 +221,7 @@
       "esES": null
     },
     {
-      "Key": "c2bcabe9bf614c05b96907ea9f2c84ec",
+      "Key": "8a751cbd65e145d0be7a1197403b2c41",
       "SimpleName": "MageShield2.Duration",
       "ProcessTemplates": false,
       "enGB": "1 hour/level",
@@ -243,10 +232,10 @@
       "esES": null
     },
     {
-      "Key": "18a5979b345944b7b6d64ef9cf62faaa",
+      "Key": "117669bcf0fd44feb1eac3b6f8f8cfcf",
       "SimpleName": "MageShield2Buff.Description",
       "ProcessTemplates": true,
-      "enGB": "This spell functions like shield, but its duration is longer and it can be employed like a tower shield for cover.[LONGSTART]\n\nShield creates an invisible shield of force that hovers in front of you. It negates magic missile attacks directed at you. The disk als oprovides a +4 shield bonus to AC. This bonus applies against incorporeal touch attacks, since it is a force effect. The shield has no armor check penalty or arcane spell failure</g}.[LONGEND]",
+      "enGB": "This spell functions like shield, but its duration is longer and it can be employed like a tower shield for cover.[LONGSTART]\n\nShield creates an invisible shield of force that hovers in front of you. It negates magic missile attacks directed at you. The disk als oprovides a +4 shield bonus to AC. This bonus applies against incorporeal touch attacks, since it is a force effect. The shield has no armor check penalty or arcane spell failure.[LONGEND]",
       "ruRU": null,
       "deDE": null,
       "frFR": null,
@@ -254,7 +243,7 @@
       "esES": null
     },
     {
-      "Key": "f3944aead9d94393ac41645cdc60b8fe",
+      "Key": "e11ef80bfbe44d529765ddacf394c149",
       "SimpleName": "MageShield2Buff.Name",
       "ProcessTemplates": false,
       "enGB": "Shield II",
