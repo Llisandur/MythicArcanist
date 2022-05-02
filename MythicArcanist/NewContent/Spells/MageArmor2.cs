@@ -52,6 +52,7 @@ namespace MythicArcanist.NewContent.Spells
             });
             var buffMythic = MageArmorBuffMythic.CreateCopy(MAContext, $"{spellName}BuffMythic", bp =>
             {
+                bp.m_Icon = icon; 
                 bp.GetComponent<ContextRankConfig>().m_StepLevel = spellValue;
             }
             );
