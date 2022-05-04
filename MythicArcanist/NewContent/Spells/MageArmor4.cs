@@ -20,9 +20,9 @@ namespace MythicArcanist.NewContent.Spells
     {
         public static void AddMageArmor4()
         {
-            BlueprintAbility MageArmor = BlueprintTools.GetBlueprint<BlueprintAbility>("9e1ad5d6f87d19e4d8883d63a6e35568");
-            BlueprintBuff MageArmorBuff = BlueprintTools.GetBlueprint<BlueprintBuff>("a92acdf18049d784eaa8f2004f5d2304");
-            BlueprintBuff MageArmorBuffMythic = BlueprintTools.GetBlueprint<BlueprintBuff>("355be0688dabc21409f37942d637cdab");
+            BlueprintAbility SpellCopy = BlueprintTools.GetBlueprint<BlueprintAbility>("9e1ad5d6f87d19e4d8883d63a6e35568"); //MageArmor
+            BlueprintBuff SpellCopyBuff = BlueprintTools.GetBlueprint<BlueprintBuff>("a92acdf18049d784eaa8f2004f5d2304"); //MageArmorBuff
+            BlueprintBuff SpellCopyBuffMythic = BlueprintTools.GetBlueprint<BlueprintBuff>("355be0688dabc21409f37942d637cdab"); //MageArmorBuffMythic
 
             int spellValue = 10;
             string spellName = "MageArmor4";
@@ -34,21 +34,21 @@ namespace MythicArcanist.NewContent.Spells
                 "Since mage armor is made of force, {g|Encyclopedia:Incorporeal_Touch_Attack}incorporeal{/g} creatures can't bypass it the way they do normal amror.[LONGEND]";
             var icon = AssetLoader.LoadInternal(MAContext, folder: "Spells", file: $"Icon_{spellName}.png");
 
-            var buff = MageArmorBuff.CreateCopy(MAContext, $"{spellName}Buff", bp =>
+            var buff = SpellCopyBuff.CreateCopy(MAContext, $"{spellName}Buff", bp =>
             {
                 bp.SetNameDescription(MAContext, spellDisplay, spellDesc);
                 bp.m_Icon = icon;
                 bp.GetComponent<AddStatBonus>().Value = spellValue;
                 bp.GetComponent<ACBonusAgainstWeaponType>().ArmorClassBonus = spellValue;
             });
-            var buffMythic = MageArmorBuffMythic.CreateCopy(MAContext, $"{spellName}BuffMythic", bp =>
+            var buffMythic = SpellCopyBuffMythic.CreateCopy(MAContext, $"{spellName}BuffMythic", bp =>
             {
                 bp.m_Icon = icon;
                 bp.GetComponent<ContextRankConfig>().m_StepLevel = spellValue;
             }
             );
 
-            var spell = MageArmor.CreateCopy(MAContext, spellName, bp =>
+            var spell = SpellCopy.CreateCopy(MAContext, spellName, bp =>
             {
                 bp.SetNameDescription(MAContext, spellDisplay, spellDesc);
                 bp.m_Icon = icon;

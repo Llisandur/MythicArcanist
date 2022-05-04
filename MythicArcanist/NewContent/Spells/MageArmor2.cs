@@ -20,9 +20,9 @@ namespace MythicArcanist.NewContent.Spells
     {
         public static void AddMageArmor2()
         {
-            BlueprintAbility MageArmor = BlueprintTools.GetBlueprint<BlueprintAbility>("9e1ad5d6f87d19e4d8883d63a6e35568");
-            BlueprintBuff MageArmorBuff = BlueprintTools.GetBlueprint<BlueprintBuff>("a92acdf18049d784eaa8f2004f5d2304");
-            BlueprintBuff MageArmorBuffMythic = BlueprintTools.GetBlueprint<BlueprintBuff>("355be0688dabc21409f37942d637cdab");
+            BlueprintAbility SpellCopy = BlueprintTools.GetBlueprint<BlueprintAbility>("9e1ad5d6f87d19e4d8883d63a6e35568"); //MageArmor
+            BlueprintBuff SpellCopyBuff = BlueprintTools.GetBlueprint<BlueprintBuff>("a92acdf18049d784eaa8f2004f5d2304"); //MageArmorBuff
+            BlueprintBuff SpellCopyBuffMythic = BlueprintTools.GetBlueprint<BlueprintBuff>("355be0688dabc21409f37942d637cdab"); //MageArmorBuffMythic
 
             int spellValue = 6;
             string spellName = "MageArmor2";
@@ -41,7 +41,7 @@ namespace MythicArcanist.NewContent.Spells
             */
 
             
-            var buff = MageArmorBuff.CreateCopy(MAContext, $"{spellName}Buff", bp =>
+            var buff = SpellCopyBuff.CreateCopy(MAContext, $"{spellName}Buff", bp =>
             {
                 bp.SetNameDescription(MAContext, spellDisplay, spellDesc);
                 bp.m_Icon = icon;
@@ -50,7 +50,7 @@ namespace MythicArcanist.NewContent.Spells
                 //bp.ReplaceComponents<AddStatBonus>(Helpers.Create<AddStatBonus>(a => a.Value = spellValue));
                 //bp.ReplaceComponents<ACBonusAgainstWeaponType>(Helpers.Create<ACBonusAgainstWeaponType>(a => a.ArmorClassBonus = spellValue));
             });
-            var buffMythic = MageArmorBuffMythic.CreateCopy(MAContext, $"{spellName}BuffMythic", bp =>
+            var buffMythic = SpellCopyBuffMythic.CreateCopy(MAContext, $"{spellName}BuffMythic", bp =>
             {
                 bp.m_Icon = icon; 
                 bp.GetComponent<ContextRankConfig>().m_StepLevel = spellValue;
@@ -87,7 +87,7 @@ namespace MythicArcanist.NewContent.Spells
             */
 
             
-            var spell = MageArmor.CreateCopy(MAContext, spellName, bp =>
+            var spell = SpellCopy.CreateCopy(MAContext, spellName, bp =>
             {
                 bp.SetNameDescription(MAContext, spellDisplay, spellDesc);
                 bp.m_Icon = icon;

@@ -17,8 +17,8 @@ namespace MythicArcanist.NewContent.Spells
     {
         public static void AddMageShield2()
         {
-            BlueprintAbility MageShield = BlueprintTools.GetBlueprint<BlueprintAbility>("ef768022b0785eb43a18969903c537c4");
-            BlueprintBuff MageShieldBuff = BlueprintTools.GetBlueprint<BlueprintBuff>("9c0fa9b438ada3f43864be8dd8b3e741");
+            BlueprintAbility SpellCopy = BlueprintTools.GetBlueprint<BlueprintAbility>("ef768022b0785eb43a18969903c537c4"); //MageShield
+            BlueprintBuff SpellCopyBuff = BlueprintTools.GetBlueprint<BlueprintBuff>("9c0fa9b438ada3f43864be8dd8b3e741"); //MageShieldBuff
 
             string spellName = "MageShield2";
             string spellDisplay = "Shield II";
@@ -30,13 +30,13 @@ namespace MythicArcanist.NewContent.Spells
                     "{g|Encyclopedia:Penalty}penalty{/g} or {g|Encyclopedia:Spell_Fail_Chance}arcane spell failure{/g}.[LONGEND]";
             var icon = AssetLoader.LoadInternal(MAContext, folder: "Spells", file: $"Icon_{spellName}.png");
 
-            var buff = MageShieldBuff.CreateCopy(MAContext, $"{spellName}Buff", bp =>
+            var buff = SpellCopyBuff.CreateCopy(MAContext, $"{spellName}Buff", bp =>
             {
                 bp.SetNameDescription(MAContext, spellDisplay, spellDesc);
                 bp.m_Icon = icon;
             });
             
-            var spell = MageShield.CreateCopy(MAContext, spellName, bp =>
+            var spell = SpellCopy.CreateCopy(MAContext, spellName, bp =>
             {
                 bp.SetNameDescription(MAContext, spellDisplay, spellDesc);
                 bp.m_Icon = icon;

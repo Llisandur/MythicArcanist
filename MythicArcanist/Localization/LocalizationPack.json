@@ -111,6 +111,50 @@
       "esES": null
     },
     {
+      "Key": "32d60fd55eeb4c86b0425c15e6f538b7",
+      "SimpleName": "ForceArmor.Description",
+      "ProcessTemplates": true,
+      "enGB": "You wrap your body in force, gaining a +2 deflection bonus to AC. At caster level 6th and every 6 caster levels thereafter, this deflection bonus increases by +1 (to a maximum of +5 at 18th level).",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "f49d875fc9814dfd859133bafdb3b9b0",
+      "SimpleName": "ForceArmor.Duration",
+      "ProcessTemplates": false,
+      "enGB": "10 minutes/level",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "e0c6221505114e11ae69941d3466dd4c",
+      "SimpleName": "ForceArmorBuff.Description",
+      "ProcessTemplates": true,
+      "enGB": "You wrap your body in force, gaining a +2 deflection bonus to AC. At caster level 6th and every 6 caster levels thereafter, this deflection bonus increases by +1 (to a maximum of +5 at 18th level).",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "f1d1c5413a84402c97e3829a5cf6ba5f",
+      "SimpleName": "ForceArmorBuff.Name",
+      "ProcessTemplates": false,
+      "enGB": "Force Armor",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
       "Key": "8401353a63c04062bd4e3fffe53b625a",
       "SimpleName": "MageArmor2.Description",
       "ProcessTemplates": true,

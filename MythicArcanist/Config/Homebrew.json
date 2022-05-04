@@ -13,7 +13,8 @@
         "Homebrew": true,
         "Description": "Adds Extra Mythic Feat as a normal feat."
       }
-    }
+    },
+    "IsExpanded": true
   },
   "MythicAbilities": {
     "DisableAll": false,
@@ -23,21 +24,27 @@
         "Homebrew": true,
         "Description": "Adds a mythic ability that grants 4 additional praparation slots for arcanists for 1st, 2nd, and 3rd levels."
       },
-      "AbundantPreparationImproved": {
-        "Enabled": true,
-        "Homebrew": true,
-        "Description": "Adds a mythic ability that grants 4 additional praparation slots for arcanists for 4th, 5th, and 6th levels."
-      },
       "AbundantPreparationGreater": {
         "Enabled": true,
         "Homebrew": true,
         "Description": "Adds a mythic ability that grants 4 additional praparation slots for arcanists for 7th, 8th, and 9th levels."
+      },
+      "AbundantPreparationImproved": {
+        "Enabled": true,
+        "Homebrew": true,
+        "Description": "Adds a mythic ability that grants 4 additional praparation slots for arcanists for 4th, 5th, and 6th levels."
       }
-    }
+    },
+    "IsExpanded": true
   },
   "Spells": {
     "DisableAll": false,
     "Settings": {
+      "ForceArmor": {
+        "Enabled": true,
+        "Homebrew": true,
+        "Description": "Adds a new spell Force Armor functions similar to Shield of Faith for alchemists/bards/wizards and lasts longer."
+      },
       "MageArmor2": {
         "Enabled": true,
         "Homebrew": true,
@@ -58,7 +65,7 @@
         "Homebrew": true,
         "Description": "Adds a new spell Shield II that lasts for an hour per level."
       }
-    }
-  },
-  "IsExpanded": true
+    },
+    "IsExpanded": true
+  }
 }
