@@ -21,8 +21,6 @@ namespace MythicArcanist.NewContent
                 MythicAbilities.AbundantPreparation.AddAbundantPreparation();
                 MythicAbilities.AbundantPreparationImproved.AddAbundantPreparationImproved();
                 MythicAbilities.AbundantPreparationGreater.AddAbundantPreparationGreater();
-                Feats.ExtraMythicAbility.AddExtraMythicAbility();
-                Feats.ExtraMythicFeat.AddExtraMythicFeat();
                 Spells.ForceArmor.AddForceArmor();
                 Spells.MageArmor2.AddMageArmor2();
                 Spells.MageArmor3.AddMageArmor3();

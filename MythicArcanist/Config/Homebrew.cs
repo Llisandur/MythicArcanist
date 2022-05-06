@@ -5,7 +5,7 @@ namespace MythicArcanist.Config
     public class Homebrew : IUpdatableSettings
     {
         public bool NewSettingsOffByDefault = false;
-        public SettingGroup Feats = new SettingGroup();
+        //public SettingGroup Feats = new SettingGroup();
         public SettingGroup MythicAbilities = new SettingGroup();
         //public SettingGroup MythicFeats = new SettingGroup();
         public SettingGroup Spells = new SettingGroup();
@@ -19,7 +19,7 @@ namespace MythicArcanist.Config
         {
             var loadedSettings = userSettings as Homebrew;
             NewSettingsOffByDefault = loadedSettings.NewSettingsOffByDefault;
-            Feats.LoadSettingGroup(loadedSettings.Feats, NewSettingsOffByDefault);
+            //Feats.LoadSettingGroup(loadedSettings.Feats, NewSettingsOffByDefault);
             MythicAbilities.LoadSettingGroup(loadedSettings.MythicAbilities, NewSettingsOffByDefault);
             //MythicFeats.LoadSettingGroup(loadedSettings.MythicFeats, NewSettingsOffByDefault);
             Spells.LoadSettingGroup(loadedSettings.Spells, NewSettingsOffByDefault);

@@ -4,8 +4,6 @@
     "AbundantPreparationFeature": "ec6fb9a0-91d0-4ee8-b34e-b75f83c505bc",
     "AbundantPreparationGreaterFeature": "5d31e34c-1846-46df-bf40-7a77e8bb29eb",
     "AbundantPreparationImprovedFeature": "e4b53671-0563-49fd-ad00-fbf948c4cd68",
-    "ExtraMythicAbility": "4d6ec9e9-771a-46ee-89fb-3eef3d4fccc2",
-    "ExtraMythicFeat": "cc679822-134b-4531-b8f8-c7fe14d2dbaf",
     "ForceArmor": "9e01f8ff-c5f3-4ef2-9592-b6862d209e0f",
     "ForceArmorBuff": "372a7b00-0a3e-4255-9128-93f7c08361d3",
     "MageArmor2": "247d983c-8ca0-4197-bb2a-1be55ce1d982",
@@ -18,7 +16,12 @@
     "MageArmor4Buff": "9052af53-d26e-469c-b2fe-8f7111dfe7d9",
     "MageArmor4BuffMythic": "3ba9865a-eb6e-4209-9524-7d925780c7f1",
     "MageShield2": "d335fac6-2f85-48c9-a717-810c96eeb658",
-    "MageShield2Buff": "1b4d81f7-aa74-480f-867f-7f21757c5d89"
+    "MageShield2Buff": "1b4d81f7-aa74-480f-867f-7f21757c5d89",
+    "ScrollOfForceArmor": "ef5d605d-4c93-47d7-bf65-7c98459aa1a3",
+    "ScrollOfMageArmor2": "eee011bb-3358-4568-bfa7-194c44e89ed4",
+    "ScrollOfMageArmor3": "dd4b7a55-54e7-430e-8d4f-d0ad0cd3717a",
+    "ScrollOfMageArmor4": "7105cae0-7d4a-4076-9655-b4ead8d282ad",
+    "ScrollOfMageShield2": "f273be07-9b08-4ac3-a69e-83e0d9c1219c"
   },
   "DerivedBlueprintMasters": {},
   "DerivedBlueprints": {},

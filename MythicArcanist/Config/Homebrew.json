@@ -1,21 +1,5 @@
 {
   "NewSettingsOffByDefault": false,
-  "Feats": {
-    "DisableAll": false,
-    "Settings": {
-      "ExtraMythicAbility": {
-        "Enabled": false,
-        "Homebrew": true,
-        "Description": "Adds Extra Mythic Ability as a normal feat."
-      },
-      "ExtraMythicFeat": {
-        "Enabled": false,
-        "Homebrew": true,
-        "Description": "Adds Extra Mythic Feat as a normal feat."
-      }
-    },
-    "IsExpanded": true
-  },
   "MythicAbilities": {
     "DisableAll": false,
     "Settings": {
