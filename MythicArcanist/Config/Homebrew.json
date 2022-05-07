@@ -6,17 +6,17 @@
       "AbundantPreparation": {
         "Enabled": true,
         "Homebrew": true,
-        "Description": "Adds a mythic ability that grants 4 additional praparation slots for arcanists for 1st, 2nd, and 3rd levels."
+        "Description": "Adds a mythic ability that grants 4 additional preparation slots for arcanists for 1st, 2nd, and 3rd levels."
       },
       "AbundantPreparationGreater": {
         "Enabled": true,
         "Homebrew": true,
-        "Description": "Adds a mythic ability that grants 4 additional praparation slots for arcanists for 7th, 8th, and 9th levels."
+        "Description": "Adds a mythic ability that grants 4 additional preparation slots for arcanists for 7th, 8th, and 9th levels."
       },
       "AbundantPreparationImproved": {
         "Enabled": true,
         "Homebrew": true,
-        "Description": "Adds a mythic ability that grants 4 additional praparation slots for arcanists for 4th, 5th, and 6th levels."
+        "Description": "Adds a mythic ability that grants 4 additional preparation slots for arcanists for 4th, 5th, and 6th levels."
       }
     },
     "IsExpanded": true
