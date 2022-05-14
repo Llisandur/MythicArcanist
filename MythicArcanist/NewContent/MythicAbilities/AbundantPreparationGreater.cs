@@ -13,14 +13,14 @@ namespace MythicArcanist.NewContent.MythicAbilities
         public static void AddAbundantPreparationGreater()
         {
             var ArcanistClass = BlueprintTools.GetBlueprint<BlueprintCharacterClass>("52dbfd8505e22f84fad8d702611f60b7");
-            var icon = AssetLoader.LoadInternal(MAContext, folder: "MythicAbilities", file: "Icon_AbundantPreparation.png");
-            var AbundantPreparation = BlueprintTools.GetModBlueprint<BlueprintFeature>(MAContext, "AbundantPreparationFeature");
-            var AbundantPreparationImproved = BlueprintTools.GetModBlueprint<BlueprintFeature>(MAContext, "AbundantPreparationImprovedFeature");
+            var icon = AssetLoader.LoadInternal(ThisModContext, folder: "MythicAbilities", file: "Icon_AbundantPreparation.png");
+            var AbundantPreparation = BlueprintTools.GetModBlueprint<BlueprintFeature>(ThisModContext, "AbundantPreparationFeature");
+            var AbundantPreparationImproved = BlueprintTools.GetModBlueprint<BlueprintFeature>(ThisModContext, "AbundantPreparationImprovedFeature");
 
-            var AbundantPreparationGreaterFeature = Helpers.CreateBlueprint<BlueprintFeature>(MAContext, "AbundantPreparationGreaterFeature", bp =>
+            var AbundantPreparationGreaterFeature = Helpers.CreateBlueprint<BlueprintFeature>(ThisModContext, "AbundantPreparationGreaterFeature", bp =>
             {
-                bp.SetName(MAContext, "Greater Abundant Preparation");
-                bp.SetDescription(MAContext, "You've mastered a way to increase the number of {g|Encyclopedia:Spell}spells{/g} you can prepare per day.\n" +
+                bp.SetName(ThisModContext, "Greater Abundant Preparation");
+                bp.SetDescription(ThisModContext, "You've mastered a way to increase the number of {g|Encyclopedia:Spell}spells{/g} you can prepare per day.\n" +
                     "Benefit: You can prepare four more spells per day of 7th, 8th, and 9th levels each. This ability only affects arcanist spellbooks.");
                 bp.m_Icon = icon;
                 bp.Ranks = 1;
@@ -43,7 +43,7 @@ namespace MythicArcanist.NewContent.MythicAbilities
                 bp.AddPrerequisiteFeature(AbundantPreparationImproved);
             });
 
-            if (MAContext.Homebrew.MythicAbilities.IsDisabled("AbundantPreparationGreater")) { return; }
+            if (ThisModContext.Homebrew.MythicAbilities.IsDisabled("AbundantPreparationGreater")) { return; }
             FeatTools.AddAsMythicAbility(AbundantPreparationGreaterFeature);
         }
     }

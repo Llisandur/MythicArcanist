@@ -329,6 +329,204 @@
       "frFR": null,
       "zhCN": null,
       "esES": null
+    },
+    {
+      "Key": "f1c16fd998dd44249a47a4805ea303c2",
+      "SimpleName": "TwoWeaponWarrior.Description",
+      "ProcessTemplates": false,
+      "enGB": "Trained under great masters who preached the simple truththat two are better than one when it comes to weapons, the two-weapon warrior is a terror when his hands are full. From paired daggers to exoticdouble weapons, all combinations come equally alive in his skilled hands.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "595185e51b454e8cb08aa6e4c35f7b75",
+      "SimpleName": "TwoWeaponWarrior.Name",
+      "ProcessTemplates": false,
+      "enGB": "Two-Weapon Warrior",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "61e7f96b1d274036938de80e9934da0b",
+      "SimpleName": "TwoWeaponWarriorDeadlyDefense.Description",
+      "ProcessTemplates": true,
+      "enGB": "At 19th level, when a two-weapon warrior makes a full attack with both weapons, every creature that hits him with a melee attack before the beginning of his next turn provokes an attack of opportunity from the warrior.[LONGSTART] This ability replaces armor mastery.[LONGEND]",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "f4818323751546d2800a88adef5eafe2",
+      "SimpleName": "TwoWeaponWarriorDeadlyDefense.Name",
+      "ProcessTemplates": false,
+      "enGB": "Deadly Defense",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "f121f4f5fda14a8082be00a7bde794ec",
+      "SimpleName": "TwoWeaponWarriorDefensiveFlurry.Description",
+      "ProcessTemplates": true,
+      "enGB": "At 3rd level, when a two-weapon warrior makes a full attack with both weapons, he gains a +1 dodge bonus to AC against melee attacks until the beginning of his next turn. This bonus increases by +1 every four levels after 3rd.[LONGSTART] This ability replaces armor training 1 and 2.[LONGEND]",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "4a8759e136ed4135ab84b1c616897856",
+      "SimpleName": "TwoWeaponWarriorDefensiveFlurry.Name",
+      "ProcessTemplates": false,
+      "enGB": "Defensive Flurry",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "be97b7a5cf5743be87628fe68ad8211b",
+      "SimpleName": "TwoWeaponWarriorDeftDoublestrike.Description",
+      "ProcessTemplates": true,
+      "enGB": "At 17th level, when a two-weapon warrior hits an opponent with both weapons, he can make a disarm or sunder attempt (or trip, if one or both weapons can be used to trip) against that opponent as an immediate action that does not provoke attacks of opportunity.[LONGSTART] This ability replaces weapon training 4.[LONGEND]",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "1cccc10322e9421da09751b6ddc9fddd",
+      "SimpleName": "TwoWeaponWarriorDeftDoublestrike.Name",
+      "ProcessTemplates": false,
+      "enGB": "Deft Doublestrike",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "64de0de7a6624b06aa82e4e27faf0a54",
+      "SimpleName": "TwoWeaponWarriorDoublestrike.Description",
+      "ProcessTemplates": true,
+      "enGB": "At 9th level, a two-weapon warrior may, as a standard action, make one attack with both his primary and secondary weapons. The penalties for attacking with two weapons apply normally.[LONGSTART] This ability replaces weapon training 2.[LONGEND]",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "52378fb02e784605bf6828cea31a1392",
+      "SimpleName": "TwoWeaponWarriorDoublestrike.Name",
+      "ProcessTemplates": false,
+      "enGB": "Doublestrike",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "2b0f1818d79540478fde1176932f7b2e",
+      "SimpleName": "TwoWeaponWarriorEqualOpportunity.Description",
+      "ProcessTemplates": true,
+      "enGB": "At 13th level, when a two-weapon warrior makes an attack of opportunity, he may attack once with both his primary and secondary weapons. The penalties for attacking with two weapons apply normally.[LONGSTART] This ability replaces weapon training 3.[LONGEND]",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "633a6784b4844667a7c311114efd0bdf",
+      "SimpleName": "TwoWeaponWarriorEqualOpportunity.Name",
+      "ProcessTemplates": false,
+      "enGB": "Equal Opportunity",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "0fc285cc31f9481ebef7713105c0ad0e",
+      "SimpleName": "TwoWeaponWarriorImprovedBalance.Description",
+      "ProcessTemplates": true,
+      "enGB": "At 11th level, the attack penalties for fighting with two weapons are reduced by –1 for a two-weapon warrior. Alternatively, he may use a one-handed weapon in his off-hand, treating it as if it were a light weapon with the normal light weapon penalties.[LONGSTART] This ability replaces armor training 3.[LONGEND]",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "055d039a7dbd4d148cb980b23184c32d",
+      "SimpleName": "TwoWeaponWarriorImprovedBalance.Name",
+      "ProcessTemplates": false,
+      "enGB": "Improved Balance",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "de34c26a65b04f96beaaa3358bde5657",
+      "SimpleName": "TwoWeaponWarriorPerfectBalance.Description",
+      "ProcessTemplates": true,
+      "enGB": "At 15th level, the penalties for fighting with two weapons are reduced by an additional –1 for a two-weapon warrior. This benefit stacks with improved balance. If he is using a one-handed weapon in his off hand, treating it as a light weapon, he uses the normal light weapon penalties.[LONGSTART] This ability replaces armor training 4.[LONGEND]",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "702621dc5edf4c46b2db31ddbc718390",
+      "SimpleName": "TwoWeaponWarriorPerfectBalance.Name",
+      "ProcessTemplates": false,
+      "enGB": "Perfect Balance",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "25d3632c672e4286b8474a72849ffda3",
+      "SimpleName": "TwoWeaponWarriorTwinBlades.Description",
+      "ProcessTemplates": true,
+      "enGB": "At 5th level, a two-weapon warrior gains a +1 bonus on attack and damage rolls when making a full attack with two weapons or a double weapon. This bonus increases by +1 for every four levels after 5th.[LONGSTART] This ability replaces weapon training 1.[LONGEND]",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "28f89f1ed153462c8368dd302ae1b08d",
+      "SimpleName": "TwoWeaponWarriorTwinBlades.Name",
+      "ProcessTemplates": false,
+      "enGB": "Twin Blades",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
     }
   ]
 }

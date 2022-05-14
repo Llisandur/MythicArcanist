@@ -4,11 +4,13 @@ using static UnityModManagerNet.UnityModManager;
 
 namespace MythicArcanist.ModLogic
 {
-    internal class ModContextMA : ModContextBase
+    internal class ModContext : ModContextBase
     {
+        public AddedContent AddedContent;
         public Homebrew Homebrew;
+        public ThirdParty ThirdParty;
 
-        public ModContextMA(ModEntry ModEntry) : base(ModEntry)
+        public ModContext(ModEntry ModEntry) : base(ModEntry)
         {
 #if DEBUG
             Debug = true;
@@ -17,7 +19,9 @@ namespace MythicArcanist.ModLogic
         }
         public override void LoadAllSettings()
         {
+            LoadSettings("AddedContent.json", "MythicArcanist.Config", ref AddedContent);
             LoadSettings("Homebrew.json", "MythicArcanist.Config", ref Homebrew);
+            LoadSettings("ThirdParty.json", "MythicArcanist.Config", ref ThirdParty);
             LoadBlueprints("MythicArcanist.Config", this);
             LoadLocalization("MythicArcanist.Localization");
         }
@@ -35,7 +39,9 @@ namespace MythicArcanist.ModLogic
         public override void SaveAllSettings()
         {
             base.SaveAllSettings();
+            SaveSettings("AddedContent.json", AddedContent);
             SaveSettings("Homebrew.json", Homebrew);
+            SaveSettings("ThirdParty.json", ThirdParty);
         }
     }
 }

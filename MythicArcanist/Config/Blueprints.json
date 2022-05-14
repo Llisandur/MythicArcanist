@@ -21,7 +21,16 @@
     "ScrollOfMageArmor2": "eee011bb-3358-4568-bfa7-194c44e89ed4",
     "ScrollOfMageArmor3": "dd4b7a55-54e7-430e-8d4f-d0ad0cd3717a",
     "ScrollOfMageArmor4": "7105cae0-7d4a-4076-9655-b4ead8d282ad",
-    "ScrollOfMageShield2": "f273be07-9b08-4ac3-a69e-83e0d9c1219c"
+    "ScrollOfMageShield2": "f273be07-9b08-4ac3-a69e-83e0d9c1219c",
+    "TwoWeaponWarrior": "32c96b8c-6f39-4519-94f1-b80e230d294d",
+    "TwoWeaponWarriorDeadlyDefense": "1c8a67ab-7993-4231-bdc0-abe99bb66eb7",
+    "TwoWeaponWarriorDefensiveFlurry": "b910a450-4048-4ba3-bc4d-aa3078e967de",
+    "TwoWeaponWarriorDeftDoublestrike": "1178f366-8db0-4a3a-b169-3d0e1fff6062",
+    "TwoWeaponWarriorDoublestrike": "6a0c0089-e832-477e-9b4c-fff248640b03",
+    "TwoWeaponWarriorEqualOpportunity": "ba65f977-3ef5-44ea-bfba-44b64651b593",
+    "TwoWeaponWarriorImprovedBalance": "2747b6fe-ab08-4870-8868-bcc2a12d4d66",
+    "TwoWeaponWarriorPerfectBalance": "8bb508d7-4488-4bec-9ca4-588830f901af",
+    "TwoWeaponWarriorTwinBlades": "2a154f8a-1f0f-4a4f-9975-fb715101fa6a"
   },
   "DerivedBlueprintMasters": {},
   "DerivedBlueprints": {},

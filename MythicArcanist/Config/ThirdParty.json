@@ -1,0 +1,34 @@
+{
+  "NewSettingsOffByDefault": false,
+  "Spells": {
+    "DisableAll": false,
+    "Settings": {
+      "ForceArmor": {
+        "Enabled": true,
+        "Homebrew": false,
+        "Description": "Adds a new spell Force Armor functions similar to Shield of Faith for alchemists/bards/wizards and lasts longer."
+      },
+      "MageArmor2": {
+        "Enabled": true,
+        "Homebrew": false,
+        "Description": "Adds a new spell Mage Armor II that grants +6 AC."
+      },
+      "MageArmor3": {
+        "Enabled": true,
+        "Homebrew": false,
+        "Description": "Adds a new spell Mage Armor III that grants +8 AC."
+      },
+      "MageArmor4": {
+        "Enabled": true,
+        "Homebrew": false,
+        "Description": "Adds a new spell Mage Armor IV that grants +10 AC."
+      },
+      "MageShield2": {
+        "Enabled": true,
+        "Homebrew": false,
+        "Description": "Adds a new spell Shield II that lasts for an hour per level."
+      }
+    },
+    "IsExpanded": true
+  }
+}

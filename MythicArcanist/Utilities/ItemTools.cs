@@ -13,34 +13,7 @@ using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.Utility;
 using TabletopTweaks.Core.ModLogic;
 using TabletopTweaks.Core.Utilities;
-
-using Kingmaker.Blueprints;
-using Kingmaker.Blueprints.Classes;
-using Kingmaker.Blueprints.Classes.Prerequisites;
-using Kingmaker.Blueprints.Classes.Selection;
-using Kingmaker.Blueprints.Classes.Spells;
-using Kingmaker.Blueprints.Items;
 using Kingmaker.Blueprints.Loot;
-using Kingmaker.Designers.Mechanics.Facts;
-using Kingmaker.Designers.Mechanics.Recommendations;
-using Kingmaker.EntitySystem.Stats;
-using Kingmaker.Enums.Damage;
-using Kingmaker.PubSubSystem;
-using Kingmaker.RuleSystem.Rules.Damage;
-using Kingmaker.UnitLogic;
-using Kingmaker.UnitLogic.Abilities;
-using Kingmaker.UnitLogic.Abilities.Blueprints;
-using Kingmaker.UnitLogic.Abilities.Components;
-using Kingmaker.UnitLogic.Buffs.Blueprints;
-using Kingmaker.UnitLogic.FactLogic;
-using Kingmaker.UnitLogic.Mechanics;
-using Kingmaker.UnitLogic.Mechanics.Actions;
-using Kingmaker.UnitLogic.Mechanics.Components;
-using Kingmaker.Utility;
-using System.Linq;
-using TabletopTweaks.Core.MechanicsChanges;
-using TabletopTweaks.Core.NewComponents;
-using TabletopTweaks.Core.Utilities;
 
 namespace MythicArcanist.Utilities
 {
@@ -129,7 +102,7 @@ namespace MythicArcanist.Utilities
             {
             CraftRoot.m_ScrollsItems.Add(Scroll.ToReference<BlueprintItemEquipmentUsableReference>());
             }
-            modContext.Logger.Log($"Patched: {CraftRoot.ToReference<CraftRoot.Reference>()} - {CraftRoot.name} added {Scroll.ToReference<BlueprintItemEquipmentUsableReference>()} - {Scroll.name}");
+            modContext.Logger.Log($"Patched:{Scroll.ToReference<BlueprintItemEquipmentUsableReference>()} - {Scroll.name} added to {CraftRoot.ToReference<CraftRoot.Reference>()} - {CraftRoot.name}");
         }
         public static void AddToVendor(ModContextBase modContext ,BlueprintItemEquipmentUsable Item, int Count, BlueprintSharedVendorTable VendorTable)
         {

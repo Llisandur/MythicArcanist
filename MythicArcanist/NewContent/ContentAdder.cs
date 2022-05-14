@@ -16,8 +16,9 @@ namespace MythicArcanist.NewContent
             {
                 if (Initialized) return;
                 Initialized = true;
-                MAContext.Logger.LogHeader("Loading New Content");
+                ThisModContext.Logger.LogHeader("Loading New Content");
 
+                Archetypes.Fighter.TwoWeaponWarrior.AddTwoWeaponWarriorArchetype();
                 MythicAbilities.AbundantPreparation.AddAbundantPreparation();
                 MythicAbilities.AbundantPreparationImproved.AddAbundantPreparationImproved();
                 MythicAbilities.AbundantPreparationGreater.AddAbundantPreparationGreater();

@@ -7,23 +7,23 @@ namespace MythicArcanist
 {
     static class Main
     {
-        public static bool Enabled;
-        public static ModContextMA MAContext;
+        //public static bool Enabled;
+        public static ModContext ThisModContext;
         static bool Load(UnityModManager.ModEntry modEntry)
         {
             var harmony = new Harmony(modEntry.Info.Id);
-            MAContext = new ModContextMA(modEntry);
-            //MAContext.LoadAllSettings();
-            MAContext.ModEntry.OnSaveGUI = OnSaveGUI;
-            MAContext.ModEntry.OnGUI = UMMSettingsUI.OnGUI;
+            ThisModContext = new ModContext(modEntry);
+            //ModContext.LoadAllSettings();
+            ThisModContext.ModEntry.OnSaveGUI = OnSaveGUI;
+            ThisModContext.ModEntry.OnGUI = UMMSettingsUI.OnGUI;
             harmony.PatchAll();
-            PostPatchInitializer.Initialize(MAContext);
+            PostPatchInitializer.Initialize(ThisModContext);
             return true;
         }
 
         static void OnSaveGUI(UnityModManager.ModEntry modEntry)
         {
-            MAContext.SaveAllSettings();
+            ThisModContext.SaveAllSettings();
         }
     }
 }

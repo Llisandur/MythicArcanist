@@ -34,26 +34,26 @@ namespace MythicArcanist.NewContent.Spells
                 "{g|Encyclopedia:Bonus}bonus{/g} to {g|Encyclopedia:Armor_Class}AC{/g}.\nUnlike mundane armor, mage armor entails no armor {g|Encyclopedia:Check}check{/g} " +
                 "{g|Encyclopedia:Penalty}penalty{/g}, {g|Encyclopedia:Spell_Fail_Chance}arcane spell failure chance{/g}. or {g|Encyclopedia:Speed}speed{/g} redution. " +
                 "Since mage armor is made of force, {g|Encyclopedia:Incorporeal_Touch_Attack}incorporeal{/g} creatures can't bypass it the way they do normal amror.[LONGEND]";
-            var Icon = AssetLoader.LoadInternal(MAContext, folder: "Spells", file: $"Icon_{SpellName}.png");
+            var Icon = AssetLoader.LoadInternal(ThisModContext, folder: "Spells", file: $"Icon_{SpellName}.png");
             var ScrollIcon = BlueprintTools.GetBlueprint<BlueprintItemEquipmentUsable>("e8308a74821762e49bc3211358e81016").Icon; //ScollOfMageArmor.Icon
 
-            var Buff = SpellCopyBuff.CreateCopy(MAContext, $"{SpellName}Buff", bp =>
+            var Buff = SpellCopyBuff.CreateCopy(ThisModContext, $"{SpellName}Buff", bp =>
             {
-                bp.SetNameDescription(MAContext, SpellDisplay, SpellDesc);
+                bp.SetNameDescription(ThisModContext, SpellDisplay, SpellDesc);
                 bp.m_Icon = Icon;
                 bp.GetComponent<AddStatBonus>().Value = SpellValue;
                 bp.GetComponent<ACBonusAgainstWeaponType>().ArmorClassBonus = SpellValue;
             });
-            var BuffMythic = SpellCopyBuffMythic.CreateCopy(MAContext, $"{SpellName}BuffMythic", bp =>
+            var BuffMythic = SpellCopyBuffMythic.CreateCopy(ThisModContext, $"{SpellName}BuffMythic", bp =>
             {
                 bp.m_Icon = Icon; 
                 bp.GetComponent<ContextRankConfig>().m_StepLevel = SpellValue;
             }
             );
 
-            var Spell = SpellCopy.CreateCopy(MAContext, SpellName, bp =>
+            var Spell = SpellCopy.CreateCopy(ThisModContext, SpellName, bp =>
             {
-                bp.SetNameDescription(MAContext, SpellDisplay, SpellDesc);
+                bp.SetNameDescription(ThisModContext, SpellDisplay, SpellDesc);
                 bp.m_Icon = Icon;
                 bp.RemoveComponents<SpellListComponent>();
                 bp.RemoveComponents<RecommendationNoFeatFromGroup>();
@@ -75,17 +75,18 @@ namespace MythicArcanist.NewContent.Spells
                     .m_Buff = Buff.ToReference<BlueprintBuffReference>();
             });
 
-            if (MAContext.Homebrew.Spells.IsDisabled("MageArmor2")) {  return; }
+
+            if (ThisModContext.ThirdParty.Spells.IsDisabled("MageArmor2")) {  return; }
             Spell.AddToSpellList(SpellTools.SpellList.BloodragerSpellList, 3);
             Spell.AddToSpellList(SpellTools.SpellList.WizardSpellList, 4);
             Spell.AddToSpellList(SpellTools.SpellList.LichWizardSpelllist, 4);
             //spell.AddToSpellList(SpellTools.SpellList.SummonerSpellList, 3);
             Spell.AddToSpellList(SpellTools.SpellList.WitchSpellList, 4);
-            var Scroll = Utilities.ItemTools.CreateScroll(MAContext, Spell, ScrollIcon);
-            Utilities.ItemTools.AddToVendor(MAContext, Scroll, 1, BlueprintSharedVendorTables.WarCamp_ScrollVendorClericTable);
-            Utilities.ItemTools.AddToVendor(MAContext, Scroll, 2, BlueprintSharedVendorTables.WarCamp_REVendorTableMagic);
-            Utilities.ItemTools.AddToVendor(MAContext, Scroll, 3, BlueprintSharedVendorTables.Scroll_Chapter3VendorTable);
-            Utilities.ItemTools.AddToVendor(MAContext, Scroll, 3, BlueprintSharedVendorTables.Scroll_Chapter5VendorTable);
+            var Scroll = Utilities.ItemTools.CreateScroll(ThisModContext, Spell, ScrollIcon);
+            Utilities.ItemTools.AddToVendor(ThisModContext, Scroll, 1, BlueprintSharedVendorTables.WarCamp_ScrollVendorClericTable);
+            Utilities.ItemTools.AddToVendor(ThisModContext, Scroll, 2, BlueprintSharedVendorTables.WarCamp_REVendorTableMagic);
+            Utilities.ItemTools.AddToVendor(ThisModContext, Scroll, 3, BlueprintSharedVendorTables.Scroll_Chapter3VendorTable);
+            Utilities.ItemTools.AddToVendor(ThisModContext, Scroll, 3, BlueprintSharedVendorTables.Scroll_Chapter5VendorTable);
         }
     }
 }

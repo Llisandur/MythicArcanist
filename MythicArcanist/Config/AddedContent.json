@@ -1,0 +1,14 @@
+{
+  "NewSettingsOffByDefault": false,
+  "Archetypes": {
+    "DisableAll": false,
+    "Settings": {
+      "TwoWeaponWarrior": {
+        "Enabled": true,
+        "Homebrew": true,
+        "Description": "Adds the Two-Weapon Warrior archetype for Fighter."
+      }
+    },
+    "IsExpanded": true
+  }
+}

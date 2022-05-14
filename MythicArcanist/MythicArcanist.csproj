@@ -28,13 +28,23 @@
   </Target>
 
   <ItemGroup>
+    <None Remove="Config\AddedContent.json" />
     <None Remove="Config\Blueprints.json" />
     <None Remove="Config\Homebrew.json" />
+    <None Remove="Config\ThirdParty.json" />
     <None Remove="Localization\LocalizationPack.json" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Config\Blueprints.json" />
+    <EmbeddedResource Include="Config\AddedContent.json">
+		<CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	</EmbeddedResource>
+    <EmbeddedResource Include="Config\Blueprints.json">
+		<CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	</EmbeddedResource>
+    <EmbeddedResource Include="Config\ThirdParty.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Config\Homebrew.json">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
