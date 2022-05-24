@@ -24,7 +24,35 @@ namespace MythicArcanist.Utilities
             var Scroll = Helpers.CreateBlueprint<BlueprintItemEquipmentUsable>(modContext, $"ScrollOf{Spell.name}", bp =>
             {
                 var CasterLevel = 1;
-                var SpellLevel = Spell.GetComponent<SpellListComponent>().SpellLevel;
+                var SpellLevel = 0; //Spell.GetComponent<SpellListComponent>().SpellLevel;
+                BlueprintSpellList[] SpellLists = new BlueprintSpellList[]
+                {
+                    SpellTools.SpellList.WizardSpellList,
+                    SpellTools.SpellList.ClericSpellList,
+                    SpellTools.SpellList.DruidSpellList,
+                    SpellTools.SpellList.ShamanSpelllist,
+                    SpellTools.SpellList.BardSpellList,
+                    SpellTools.SpellList.AlchemistSpellList,
+                    SpellTools.SpellList.InquisitorSpellList,
+                    SpellTools.SpellList.MagusSpellList,
+                    SpellTools.SpellList.HunterSpelllist,
+                    SpellTools.SpellList.WarpriestSpelllist,
+                    SpellTools.SpellList.PaladinSpellList,
+                    SpellTools.SpellList.RangerSpellList,
+                    SpellTools.SpellList.BloodragerSpellList
+                };
+                foreach (BlueprintSpellList list in SpellLists)
+                {
+                    foreach (SpellListComponent SpellList in Spell.GetComponents<SpellListComponent>())
+                    {
+                        if (Spell.GetComponent<SpellListComponent>().m_SpellList.Is(list)) { SpellLevel = SpellList.SpellLevel; break; }
+                        
+                    }
+                    if (SpellLevel > 0)
+                    {
+                        break;
+                    }
+                }
 
                 if (Spell.GetComponents<SpellListComponent>().Any(c => c.m_SpellList.Get() == (
                     SpellTools.SpellList.WizardSpellList |
@@ -32,6 +60,7 @@ namespace MythicArcanist.Utilities
                     SpellTools.SpellList.DruidSpellList |
                     SpellTools.SpellList.ShamanSpelllist)))
                 {
+                    
                     CasterLevel = GetCasterLevel9thLevelPrepared(SpellLevel);
                 }
                 else if (Spell.GetComponents<SpellListComponent>().Any(c => c.m_SpellList.Get() == (

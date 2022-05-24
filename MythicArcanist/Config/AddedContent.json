@@ -5,7 +5,7 @@
     "Settings": {
       "TwoWeaponWarrior": {
         "Enabled": true,
-        "Homebrew": true,
+        "Homebrew": false,
         "Description": "Adds the Two-Weapon Warrior archetype for Fighter."
       }
     },
