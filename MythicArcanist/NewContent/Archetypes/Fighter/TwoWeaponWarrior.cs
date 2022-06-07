@@ -42,7 +42,7 @@ namespace MythicArcanist.NewContent.Archetypes.Fighter
 {
     internal class TwoWeaponWarrior
     {
-        public static void AddTwoWeaponWarriorArchetype()
+        public static void Add()
         {
             #region Reference Blueprints
             var FighterClass = BlueprintTools.GetBlueprint<BlueprintCharacterClass>("48ac8db94d5de7645906c7d0ad3bcfbd");
@@ -52,6 +52,8 @@ namespace MythicArcanist.NewContent.Archetypes.Fighter
             var ArmorMastery = BlueprintTools.GetBlueprint<BlueprintFeature>("ae177f17cfb45264291d4d7c2cb64671");
             var WeaponTrainingSelection = BlueprintTools.GetBlueprint<BlueprintFeature>("b8cecf4e5e464ad41b79d5b42b76b399");
             var WeaponTrainingRankUpSelection = BlueprintTools.GetBlueprint<BlueprintFeature>("5f3cc7b9a46b880448275763fe70c0b0");
+
+            var TwoWeaponFightingMythicFeat = BlueprintTools.GetBlueprintReference<BlueprintFeatureReference>("c6afbb8c1a36a704a8041f35498f41a4");
 
             var ColdIronLongsword = BlueprintTools.GetBlueprint<BlueprintItemWeapon>("533e10c8b4c6a4940a3767d096f4f05d");
             var ColdIronLightHammer = BlueprintTools.GetBlueprint<BlueprintItemWeapon>("0d63566868570f04b9dd69398b7ae239");
@@ -65,7 +67,7 @@ namespace MythicArcanist.NewContent.Archetypes.Fighter
             string DefensiveFlurryName = "Defensive Flurry";
             string DefensiveFlurryDesc = "At 3rd level, when a two-weapon warrior makes a full attack with both weapons, he gains a +1 dodge bonus to AC against " +
                     "melee attacks until the beginning of his next turn. This bonus increases by +1 every four levels after 3rd.";
-            var DefensiveFlurryBuff = Helpers.CreateBuff(ThisModContext, "TwoWeaponWarriorDefensiveFlurryBuff", bp =>
+            var DefensiveFlurryBuff = Helpers.CreateBlueprint<BlueprintBuff>(ThisModContext, "TwoWeaponWarriorDefensiveFlurryBuff", bp =>
             {
                 bp.AddComponent<ACBonusAgainstAttacks>(c =>
                 {
@@ -99,7 +101,7 @@ namespace MythicArcanist.NewContent.Archetypes.Fighter
                 bp.SetDescription(ThisModContext, DefensiveFlurryDesc);
                 bp.m_DescriptionShort = Helpers.CreateString(ThisModContext, $"{bp.name}.DescriptionShort", "");
                 bp.IsClassFeature = true;
-                bp.m_Flags = BlueprintBuff.Flags.HiddenInUi;
+                //bp.m_Flags = BlueprintBuff.Flags.HiddenInUi;
                 bp.Stacking = StackingType.Replace;
                 bp.Ranks = 1;
                 bp.TickEachSecond = false;
@@ -112,36 +114,20 @@ namespace MythicArcanist.NewContent.Archetypes.Fighter
                 bp.m_Icon = BlueprintTools.GetBlueprint<BlueprintFeature>("be50f4e97fff8a24ba92561f1694a945").Icon; //SpellStrikeFeature
                 bp.IsClassFeature = true;
                 bp.Ranks = 5;
-                bp.AddComponent<AddInitiatorAttackWithWeaponTrigger>(c =>
+                bp.AddComponent<TWWDefensiveFlurry>(c =>
                 {
-                    c.OnlyOnFullAttack = true;
-                    c.ActionsOnInitiator = true;
-                    c.RangeType = WeaponRangeType.Melee;
                     c.Action = Helpers.CreateActionList(
-                        new Conditional
+                        Helpers.Create<ContextActionApplyBuff>(c =>
                         {
-                            ConditionsChecker = new ConditionsChecker
+                            c.m_Buff = DefensiveFlurryBuff.ToReference<BlueprintBuffReference>();
+                            c.DurationValue = new ContextDurationValue()
                             {
-                                Conditions = new Condition[]
-                                {
-                                    Helpers.Create<ContextConditionCasterWeaponInTwoHands>(c=> c.Not = false)
-                                }
-                            },
-                            IfTrue = Helpers.CreateActionList(
-                                Helpers.Create<ContextActionApplyBuff>(c =>
-                                {
-                                    c.m_Buff = DefensiveFlurryBuff.ToReference<BlueprintBuffReference>();
-                                    c.DurationValue = new ContextDurationValue()
-                                    {
-                                        Rate = DurationRate.Rounds,
-                                        DiceType = DiceType.Zero,
-                                        DiceCountValue = 0,
-                                        BonusValue = 1
-                                    };
-                                    c.ToCaster = true;
-                                }))
-                        }
-                    );
+                                Rate = DurationRate.Rounds,
+                                DiceType = DiceType.Zero,
+                                DiceCountValue = 0,
+                                BonusValue = 1
+                            };
+                        }));
                 });
             });
             #endregion
@@ -199,7 +185,11 @@ namespace MythicArcanist.NewContent.Archetypes.Fighter
                     "he may use a one-handed weapon in his off-hand, treating it as if it were a light weapon with the normal light weapon penalties.");
                 bp.m_Icon = BlueprintTools.GetBlueprint<BlueprintAbility>("779179912e6c6fe458fa4cfb90d96e10").Icon; //LeadBlades
                 bp.IsClassFeature = true;
-                bp.AddComponent(new TWWBalance());
+                bp.AddComponent<TWWBalance>(c =>
+                {
+                    c.OneHandedOffhandBonus = true;
+                    c.m_MythicBlueprint = TwoWeaponFightingMythicFeat;
+                });
             });
             var EqualOpportunity = Helpers.CreateBlueprint<BlueprintFeature>(ThisModContext, "TwoWeaponWarriorEqualOpportunity", bp =>
             {
@@ -216,7 +206,11 @@ namespace MythicArcanist.NewContent.Archetypes.Fighter
                     "stacks with improved balance. If he is using a one-handed weapon in his off hand, treating it as a light weapon, he uses the normal light weapon penalties.");
                 bp.m_Icon = BlueprintTools.GetBlueprint<BlueprintAbility>("779179912e6c6fe458fa4cfb90d96e10").Icon; //LeadBlades
                 bp.IsClassFeature = true;
-                bp.AddComponent(new TWWBalance());
+                bp.AddComponent<TWWBalance>(c =>
+                {
+                    c.OneHandedOffhandBonus = false;
+                    c.m_MythicBlueprint = TwoWeaponFightingMythicFeat;
+                });
             });
             var DeftDoublestrike = Helpers.CreateBlueprint<BlueprintFeature>(ThisModContext, "TwoWeaponWarriorDeftDoublestrike", bp =>
             {
@@ -231,6 +225,7 @@ namespace MythicArcanist.NewContent.Archetypes.Fighter
                 bp.SetName(ThisModContext, "Deadly Defense");
                 bp.SetDescription(ThisModContext, "At 19th level, when a two-weapon warrior makes a full attack with both weapons, every creature that hits him with a melee attack " +
                     "before the beginning of his next turn provokes an attack of opportunity from the warrior.");
+                bp.m_Icon = BlueprintTools.GetBlueprint<BlueprintAbility>("464a7193519429f48b4d190acb753cf0").Icon; //Grace
                 bp.IsClassFeature = true;
             });
             #endregion

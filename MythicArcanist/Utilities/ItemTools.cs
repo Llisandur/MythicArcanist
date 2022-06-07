@@ -24,34 +24,37 @@ namespace MythicArcanist.Utilities
             var Scroll = Helpers.CreateBlueprint<BlueprintItemEquipmentUsable>(modContext, $"ScrollOf{Spell.name}", bp =>
             {
                 var CasterLevel = 1;
-                var SpellLevel = 0; //Spell.GetComponent<SpellListComponent>().SpellLevel;
-                BlueprintSpellList[] SpellLists = new BlueprintSpellList[]
+                var SpellLevel = -1;
+                
+                int WizardSpellLevel = GetSpellLevel(Spell, SpellTools.SpellList.WizardSpellList);
+                int ClericSpellLevel = GetSpellLevel(Spell, SpellTools.SpellList.ClericSpellList);
+                int DruidSpellLevel = GetSpellLevel(Spell, SpellTools.SpellList.DruidSpellList);
+                int ShamanSpellLevel = GetSpellLevel(Spell, SpellTools.SpellList.ShamanSpelllist);
+                int BardSpellLevel = GetSpellLevel(Spell, SpellTools.SpellList.BardSpellList);
+                int AlchemistSpellLevel = GetSpellLevel(Spell, SpellTools.SpellList.AlchemistSpellList);
+                int InquisitorSpellLevel = GetSpellLevel(Spell, SpellTools.SpellList.InquisitorSpellList);
+                int MagusSpellLevel = GetSpellLevel(Spell, SpellTools.SpellList.MagusSpellList);
+                int HunterSpellLevel = GetSpellLevel(Spell, SpellTools.SpellList.HunterSpelllist);
+                int WarpriestSpellLevel = GetSpellLevel(Spell, SpellTools.SpellList.WarpriestSpelllist);
+                int PaladinSpellLevel = GetSpellLevel(Spell, SpellTools.SpellList.PaladinSpellList);
+                int RangerSpellLevel = GetSpellLevel(Spell, SpellTools.SpellList.RangerSpellList);
+                int BloodragerSpellLevel = GetSpellLevel(Spell, SpellTools.SpellList.BloodragerSpellList);
+
+                while (SpellLevel == -1)
                 {
-                    SpellTools.SpellList.WizardSpellList,
-                    SpellTools.SpellList.ClericSpellList,
-                    SpellTools.SpellList.DruidSpellList,
-                    SpellTools.SpellList.ShamanSpelllist,
-                    SpellTools.SpellList.BardSpellList,
-                    SpellTools.SpellList.AlchemistSpellList,
-                    SpellTools.SpellList.InquisitorSpellList,
-                    SpellTools.SpellList.MagusSpellList,
-                    SpellTools.SpellList.HunterSpelllist,
-                    SpellTools.SpellList.WarpriestSpelllist,
-                    SpellTools.SpellList.PaladinSpellList,
-                    SpellTools.SpellList.RangerSpellList,
-                    SpellTools.SpellList.BloodragerSpellList
-                };
-                foreach (BlueprintSpellList list in SpellLists)
-                {
-                    foreach (SpellListComponent SpellList in Spell.GetComponents<SpellListComponent>())
-                    {
-                        if (Spell.GetComponent<SpellListComponent>().m_SpellList.Is(list)) { SpellLevel = SpellList.SpellLevel; break; }
-                        
-                    }
-                    if (SpellLevel > 0)
-                    {
-                        break;
-                    }
+                    if (WizardSpellLevel > 0) { SpellLevel = WizardSpellLevel; break; }
+                    if (ClericSpellLevel > 0) { SpellLevel = ClericSpellLevel; break; }
+                    if (DruidSpellLevel > 0) { SpellLevel = DruidSpellLevel; break; }
+                    if (ShamanSpellLevel > 0) { SpellLevel = ShamanSpellLevel; break; }
+                    if (BardSpellLevel > 0) { SpellLevel = BardSpellLevel; break; }
+                    if (AlchemistSpellLevel > 0) { SpellLevel = AlchemistSpellLevel; break; }
+                    if (InquisitorSpellLevel > 0) { SpellLevel = InquisitorSpellLevel; break; }
+                    if (MagusSpellLevel > 0) { SpellLevel = MagusSpellLevel; break; }
+                    if (HunterSpellLevel > 0) { SpellLevel = HunterSpellLevel; break; }
+                    if (WarpriestSpellLevel > 0) { SpellLevel = WarpriestSpellLevel; break; }
+                    if (PaladinSpellLevel > 0) { SpellLevel = PaladinSpellLevel; break; }
+                    if (RangerSpellLevel > 0) { SpellLevel = RangerSpellLevel; break; }
+                    if (BloodragerSpellLevel > 0) { SpellLevel = BloodragerSpellLevel; break; }
                 }
 
                 if (Spell.GetComponents<SpellListComponent>().Any(c => c.m_SpellList.Get() == (
@@ -146,7 +149,15 @@ namespace MythicArcanist.Utilities
             });
             modContext.Logger.Log($"Added: {Item} to {VendorTable}.");
         }
-            private static int GetCasterLevel9thLevelPrepared(int SpellLevel)
+        private static int GetSpellLevel(BlueprintAbility Spell, BlueprintSpellList ClassSpellList)
+        {
+            foreach (SpellListComponent SpellList in Spell.GetComponents<SpellListComponent>())
+            {
+                if (Spell.GetComponent<SpellListComponent>().m_SpellList.Is(ClassSpellList)) { return SpellList.SpellLevel; }
+            }
+            return -1;
+        }
+        private static int GetCasterLevel9thLevelPrepared(int SpellLevel)
         {
             switch (SpellLevel)
             {

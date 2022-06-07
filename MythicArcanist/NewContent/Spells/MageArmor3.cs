@@ -20,7 +20,7 @@ namespace MythicArcanist.NewContent.Spells
 {
     static class MageArmor3
     {
-        public static void AddMageArmor3()
+        public static void Add()
         {
             BlueprintAbility SpellCopy = BlueprintTools.GetBlueprint<BlueprintAbility>("9e1ad5d6f87d19e4d8883d63a6e35568"); //MageArmor
             BlueprintBuff SpellCopyBuff = BlueprintTools.GetBlueprint<BlueprintBuff>("a92acdf18049d784eaa8f2004f5d2304"); //MageArmorBuff

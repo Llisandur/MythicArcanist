@@ -17,7 +17,7 @@ namespace MythicArcanist.NewContent.Spells
 {
     static class MageShield2
     {
-        public static void AddMageShield2()
+        public static void Add()
         {
             BlueprintAbility SpellCopy = BlueprintTools.GetBlueprint<BlueprintAbility>("ef768022b0785eb43a18969903c537c4"); //MageShield
             BlueprintBuff SpellCopyBuff = BlueprintTools.GetBlueprint<BlueprintBuff>("9c0fa9b438ada3f43864be8dd8b3e741"); //MageShieldBuff

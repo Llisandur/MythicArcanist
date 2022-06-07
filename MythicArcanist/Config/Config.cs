@@ -40,6 +40,7 @@ namespace MythicArcanist.Config
     {
         public bool NewSettingsOffByDefault = false;
         public SettingGroup Spells = new SettingGroup();
+        public SettingGroup ArcanistExploits = new SettingGroup();
 
         public void Init()
         {
@@ -51,6 +52,7 @@ namespace MythicArcanist.Config
             var loadedSettings = userSettings as ThirdParty;
             NewSettingsOffByDefault = loadedSettings.NewSettingsOffByDefault;
             Spells.LoadSettingGroup(loadedSettings.Spells, NewSettingsOffByDefault);
+            ArcanistExploits.LoadSettingGroup(loadedSettings.ArcanistExploits, NewSettingsOffByDefault);
         }
     }
 }

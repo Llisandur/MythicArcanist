@@ -10,7 +10,7 @@ namespace MythicArcanist.NewContent.MythicAbilities
 {
     static class AbundantPreparation
     {
-        public static void AddAbundantPreparation()
+        public static void Add()
         {
             var ArcanistClass = BlueprintTools.GetBlueprint<BlueprintCharacterClass>("52dbfd8505e22f84fad8d702611f60b7");
             var icon = AssetLoader.LoadInternal(ThisModContext, folder: "MythicAbilities", file: "Icon_AbundantPreparation.png");

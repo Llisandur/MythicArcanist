@@ -27,6 +27,27 @@
         "Enabled": true,
         "Homebrew": false,
         "Description": "Adds a new spell Shield II that lasts for an hour per level."
+      },
+      "MagicMissileGreater": {
+        "Enabled": true,
+        "Homebrew": false,
+        "Description": "Adds a new spell Greater Magic Missile that deals extra damage and can bypass shields."
+      },
+      "MagicMissileMastered": {
+        "Enabled": true,
+        "Homebrew": false,
+        "Description": "Adds a new spell Mastered Magic Missile that deals extra damage and can bypass shields and has no limit to the number of missiles."
+      }
+    },
+    "IsExpanded": true
+  },
+  "ArcanistExploits": {
+    "DisableAll": false,
+    "Settings": {
+      "MartialTraining": {
+        "Enabled": true,
+        "Homebrew": false,
+        "Description": "Adds the Martial Training and Greater Martial Training arcanist exploits."
       }
     },
     "IsExpanded": true

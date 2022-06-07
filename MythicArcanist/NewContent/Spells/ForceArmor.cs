@@ -19,7 +19,7 @@ namespace MythicArcanist.NewContent.Spells
 {
     static class ForceArmor
     {
-        public static void AddForceArmor()
+        public static void Add()
         {
             BlueprintAbility SpellCopy = BlueprintTools.GetBlueprint<BlueprintAbility>("183d5bb91dea3a1489a6db6c9cb64445"); //ShieldOfFaith
             BlueprintBuff SpellCopyBuff = BlueprintTools.GetBlueprint<BlueprintBuff>("5274ddc289f4a7447b7ace68ad8bebb0"); //ShieldOfFaithBuff

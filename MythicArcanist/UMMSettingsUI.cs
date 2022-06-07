@@ -57,6 +57,7 @@ namespace MythicArcanist
                 UI.Space(25);
 
                 SetttingUI.SettingGroup("Spells", TabLevel, ThirdParty.Spells);
+                SetttingUI.SettingGroup("Arcanist Exploits", TabLevel, ThirdParty.ArcanistExploits);
             }
         }
     }

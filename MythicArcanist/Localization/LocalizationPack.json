@@ -67,6 +67,50 @@
       "esES": null
     },
     {
+      "Key": "006185a76efb4fdb9b6227081866a16e",
+      "SimpleName": "ArcanistExploitMartialTraining.Description",
+      "ProcessTemplates": true,
+      "enGB": "The arcanist's base attack bonus increases by 2, to a maximum of her level.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "c57acac1890342e089d19c4753d842b4",
+      "SimpleName": "ArcanistExploitMartialTraining.Name",
+      "ProcessTemplates": false,
+      "enGB": "Martial Training",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "009ac55768c447a3a18f4a0281202a35",
+      "SimpleName": "ArcanistExploitMartialTrainingGreater.Description",
+      "ProcessTemplates": true,
+      "enGB": "The arcanist's base attack bonus increases by 3, to a maximum of her level. The arcanist must already have the martial training exploit to select this exploit.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "3a1ec67db8a646ca874ef3986ec9ca6b",
+      "SimpleName": "ArcanistExploitMartialTrainingGreater.Name",
+      "ProcessTemplates": false,
+      "enGB": "Greater Martial Training",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
       "Key": "0557a6b02b62420787493e5f30d974a7",
       "SimpleName": "ForceArmor.Description",
       "ProcessTemplates": true,
@@ -254,6 +298,50 @@
       "esES": null
     },
     {
+      "Key": "33d451bd4e2b4bc7a76aaebef7b8b816",
+      "SimpleName": "MagicMissileGreater.Description",
+      "ProcessTemplates": true,
+      "enGB": "This spell functions like magic missile, except each missile deals 1d6 points of force damage + your key ability modifier. If it strikes an effect that normally blocks magic missile, you may attempt to penetrate the effect as if against a spell resistance equal to 5 + the target's caster level or the target's Hit Dice if the target has no caster level.",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "4d247b1d8e194add805274cd6a423b5c",
+      "SimpleName": "MagicMissileGreater.Name",
+      "ProcessTemplates": false,
+      "enGB": "Magic Missile, Greater",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "7be9039a907a42d0896da697d550074d",
+      "SimpleName": "MagicMissileMastered.Description",
+      "ProcessTemplates": true,
+      "enGB": "This spell functions like greater magic missile, except it has no maximum to how many additional missiles you may shoot(six missiles at 11th level, seven missiles at 13th level, eight missiles at 15th level, nine missiles at 17th level, ten missiles at 19th level, etc).",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "12e41ea6655247eda4303e85732169f7",
+      "SimpleName": "MagicMissileMastered.Name",
+      "ProcessTemplates": false,
+      "enGB": "Magic Missile, Mastered",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
       "Key": "fdb68510ce8442f78cce58dbe0509200",
       "SimpleName": "ScrollOfForceArmor.Name",
       "ProcessTemplates": false,
@@ -313,6 +401,28 @@
       "SimpleName": "ScrollOfMageShield2.Name",
       "ProcessTemplates": false,
       "enGB": "Scroll of Shield II",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "2f0d9fe6c20a498793d06a778fb617be",
+      "SimpleName": "ScrollOfMagicMissileGreater.Name",
+      "ProcessTemplates": false,
+      "enGB": "Scroll of Magic Missile, Greater",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "2ead4ae8862a4a3ab77b0820aa0ec361",
+      "SimpleName": "ScrollOfMagicMissileMastered.Name",
+      "ProcessTemplates": false,
+      "enGB": "Scroll of Magic Missile, Mastered",
       "ruRU": null,
       "deDE": null,
       "frFR": null,
