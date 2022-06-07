@@ -67,7 +67,7 @@
       <CopyLocal>False</CopyLocal>
     </Reference>
     <Reference Include="Assembly-CSharp">
-      <HintPath>$(SolutionDir)lib\Assembly-CSharp_public.dll</HintPath>
+      <HintPath>$(SolutionDir)\lib\Assembly-CSharp_public.dll</HintPath>
       <Private>false</Private>
       <CopyLocal>False</CopyLocal>
     </Reference>
@@ -112,7 +112,7 @@
       <CopyLocal>False</CopyLocal>
     </Reference>
     <Reference Include="UniRx">
-      <HintPath>$(SolutionDir)lib\UniRx_public.dll</HintPath>
+      <HintPath>$(SolutionDir)\lib\UniRx_public.dll</HintPath>
       <Private>False</Private>
       <CopyLocal>False</CopyLocal>
     </Reference>

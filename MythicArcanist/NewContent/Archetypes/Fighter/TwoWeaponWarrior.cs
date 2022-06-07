@@ -33,6 +33,7 @@ using Kingmaker.View.Animation;
 using Kingmaker.Visual.Animation.Kingmaker.Actions;
 using System.Collections.Generic;
 using System.Linq;
+using Kingmaker.UI.UnitSettings.Blueprints;
 using System.Text.RegularExpressions;
 using TabletopTweaks.Core.Utilities;
 using MythicArcanist.NewComponents;
@@ -191,14 +192,36 @@ namespace MythicArcanist.NewContent.Archetypes.Fighter
                     c.m_MythicBlueprint = TwoWeaponFightingMythicFeat;
                 });
             });
+            #region Equal Opportunity
+            string EqualOpportunityName = "Equal Opportunity";
+            string EqualOpportunityDesc = "At 13th level, when a two-weapon warrior makes an attack of opportunity, he may attack once with both his primary and secondary " +
+                    "weapons. The penalties for attacking with two weapons apply normally.";
+            var EqualOpportunityIcon = BlueprintTools.GetBlueprint<BlueprintAbility>("831e942864e924846a30d2e0678e438b").Icon; //BlessWeapon
+            var EqualOpportunityBuff = Helpers.CreateBlueprint<BlueprintBuff>(ThisModContext, "TwoWeaponWarriorEqualOpportunityBuff", bp =>
+            {
+                bp.SetName(ThisModContext, EqualOpportunityName);
+                bp.SetDescription(ThisModContext, EqualOpportunityDesc);
+                bp.m_Icon = EqualOpportunityIcon;
+                bp.AddComponent(new TWWEqualOpportunity());
+            });
+            var EqualOpportunityToggleAbility = Helpers.CreateBlueprint<BlueprintActivatableAbility>(ThisModContext, "TwoWeaponWarriorEqualOpportunityToggleAbility", bp =>
+            {
+                bp.SetName(ThisModContext, EqualOpportunityName);
+                bp.SetDescription(ThisModContext, EqualOpportunityDesc);
+                bp.m_Icon = EqualOpportunityIcon;
+                bp.m_Buff = EqualOpportunityBuff.ToReference<BlueprintBuffReference>();
+                bp.IsOnByDefault = false;
+                bp.DoNotTurnOffOnRest = true;
+                bp.DeactivateImmediately = true;
+            });
             var EqualOpportunity = Helpers.CreateBlueprint<BlueprintFeature>(ThisModContext, "TwoWeaponWarriorEqualOpportunity", bp =>
             {
-                bp.SetName(ThisModContext, "Equal Opportunity");
-                bp.SetDescription(ThisModContext, "At 13th level, when a two-weapon warrior makes an attack of opportunity, he may attack once with both his primary and secondary " +
-                    "weapons. The penalties for attacking with two weapons apply normally.");
-                bp.m_Icon = BlueprintTools.GetBlueprint<BlueprintAbility>("831e942864e924846a30d2e0678e438b").Icon; //BlessWeapon
+                bp.SetName(ThisModContext, EqualOpportunityName);
+                bp.SetDescription(ThisModContext, EqualOpportunityDesc);
+                bp.m_Icon = EqualOpportunityIcon;
                 bp.IsClassFeature = true;
             });
+            #endregion
             var PerfectBalance = Helpers.CreateBlueprint<BlueprintFeature>(ThisModContext, "TwoWeaponWarriorPerfectBalance", bp =>
             {
                 bp.SetName(ThisModContext, "Perfect Balance");
