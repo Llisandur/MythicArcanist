@@ -18,35 +18,36 @@ namespace MythicArcanist.NewComponents
 
 		public void OnEventAboutToTrigger(RuleAttackWithWeapon evt)
 		{
+		}
+
+		public void OnEventDidTrigger(RuleAttackWithWeapon evt)
+		{
 			MechanicsContext context = base.Context;
 			UnitEntityData maybeCaster = context.MaybeCaster;
 			ItemEntityWeapon firstWeapon = maybeCaster.Body.PrimaryHand.MaybeWeapon;
 			ItemEntityWeapon secondWeapon = maybeCaster.Body.SecondaryHand.MaybeWeapon;
 			UnitEntityData targetUnit = evt.Target;
-			//RuleAttackWithWeapon rule = new RuleAttackWithWeapon(maybeCaster, targetUnit, firstWeapon, 0);
-			//RuleAttackWithWeapon rule2 = new RuleAttackWithWeapon(maybeCaster, targetUnit, secondWeapon, 0);
+			//bool didAttack = false;
+			RuleAttackWithWeapon rule = new RuleAttackWithWeapon(maybeCaster, targetUnit, firstWeapon, 0);
+			RuleAttackWithWeapon rule2 = new RuleAttackWithWeapon(maybeCaster, targetUnit, secondWeapon, 0);
 			//using (eventHandlers.Activate())
 			//{
 			//	context.TriggerRule<RuleAttackWithWeapon>(rule);
 			//	context.TriggerRule<RuleAttackWithWeapon>(rule2);
 			//}
 
-			if (evt.IsAttackOfOpportunity)
+			if (evt.IsAttackOfOpportunity && !(evt.Weapon.HoldingSlot.MaybeItem == secondWeapon))
 			{
-				if (!evt.Target.Descriptor.State.IsDead)
+				if (!evt.Target.Descriptor.State.IsDead)// && !didAttack)
 				{
 					Rulebook.Trigger(new RuleAttackWithWeapon(maybeCaster, targetUnit, secondWeapon, 0)
 					{
 						IsAttackOfOpportunity = true,
 						ForceFlatFooted = ForceFlatFooted
 					});
+					//didAttack = true;
 				}
 			}
-		}
-
-		public void OnEventDidTrigger(RuleAttackWithWeapon evt)
-		{
-			//base.Data.Clear();
 		}
 
 		//public void OnEventAboutToTrigger(RuleCalculateAttackBonus evt)
