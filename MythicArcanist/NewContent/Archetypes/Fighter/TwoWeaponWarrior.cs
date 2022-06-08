@@ -220,6 +220,13 @@ namespace MythicArcanist.NewContent.Archetypes.Fighter
                 bp.SetDescription(ThisModContext, EqualOpportunityDesc);
                 bp.m_Icon = EqualOpportunityIcon;
                 bp.IsClassFeature = true;
+                bp.AddComponent<AddFacts>(c =>
+                {
+                    c.m_Facts = new BlueprintUnitFactReference[]
+                    {
+                        EqualOpportunityToggleAbility.ToReference<BlueprintUnitFactReference>()
+                    };
+                });
             });
             #endregion
             var PerfectBalance = Helpers.CreateBlueprint<BlueprintFeature>(ThisModContext, "TwoWeaponWarriorPerfectBalance", bp =>

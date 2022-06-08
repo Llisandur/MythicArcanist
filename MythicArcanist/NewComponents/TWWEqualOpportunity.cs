@@ -12,7 +12,6 @@ namespace MythicArcanist.NewComponents
     public class TWWEqualOpportunity : UnitFactComponentDelegate<AttackBonusConditional.RuntimeData>, 
 		IInitiatorRulebookHandler<RuleAttackWithWeapon>, IRulebookHandler<RuleAttackWithWeapon>, 
 		ISubscriber, IInitiatorRulebookSubscriber
-		//IInitiatorRulebookHandler<RuleCalculateAttackBonus>, IRulebookHandler<RuleCalculateAttackBonus>
 	{
 		public bool ForceFlatFooted { get; set; }
 
@@ -27,39 +26,18 @@ namespace MythicArcanist.NewComponents
 			ItemEntityWeapon firstWeapon = maybeCaster.Body.PrimaryHand.MaybeWeapon;
 			ItemEntityWeapon secondWeapon = maybeCaster.Body.SecondaryHand.MaybeWeapon;
 			UnitEntityData targetUnit = evt.Target;
-			//bool didAttack = false;
-			RuleAttackWithWeapon rule = new RuleAttackWithWeapon(maybeCaster, targetUnit, firstWeapon, 0);
-			RuleAttackWithWeapon rule2 = new RuleAttackWithWeapon(maybeCaster, targetUnit, secondWeapon, 0);
-			//using (eventHandlers.Activate())
-			//{
-			//	context.TriggerRule<RuleAttackWithWeapon>(rule);
-			//	context.TriggerRule<RuleAttackWithWeapon>(rule2);
-			//}
 
-			if (evt.IsAttackOfOpportunity && !(evt.Weapon.HoldingSlot.MaybeItem == secondWeapon))
+			if (evt.IsAttackOfOpportunity && (evt.Weapon.HoldingSlot.MaybeItem == firstWeapon))
 			{
-				if (!evt.Target.Descriptor.State.IsDead)// && !didAttack)
+				if (!evt.Target.Descriptor.State.IsDead)
 				{
 					Rulebook.Trigger(new RuleAttackWithWeapon(maybeCaster, targetUnit, secondWeapon, 0)
 					{
 						IsAttackOfOpportunity = true,
 						ForceFlatFooted = ForceFlatFooted
 					});
-					//didAttack = true;
 				}
 			}
 		}
-
-		//public void OnEventAboutToTrigger(RuleCalculateAttackBonus evt)
-		//{
-		//	if (base.Data.Target != null && base.Data.Target == evt.Target)
-		//	{
-		//		evt.AddModifier(base.Data.AttackBonus, base.Fact, Descriptor);
-		//	}
-		//}
-		//
-		//public void OnEventDidTrigger(RuleCalculateAttackBonus evt)
-		//{
-		//}
 	}
 }
