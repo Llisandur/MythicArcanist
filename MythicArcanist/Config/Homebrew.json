@@ -20,5 +20,16 @@
       }
     },
     "IsExpanded": true
+  },
+  "Loremaster": {
+    "DisableAll": false,
+    "Settings": {
+      "PaladinSpellSecret": {
+        "Enabled": true,
+        "Homebrew": true,
+        "Description": "Adds paladin to the selection of loremaster spell secrets."
+      }
+    },
+    "IsExpanded": true
   }
 }

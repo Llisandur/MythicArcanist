@@ -18,7 +18,6 @@ namespace MythicArcanist.NewContent
                 Initialized = true;
                 ThisModContext.Logger.LogHeader("Loading New Content");
 
-                Archetypes.Fighter.TwoWeaponWarrior.Add();
                 MythicAbilities.AbundantPreparation.Add();
                 MythicAbilities.AbundantPreparationImproved.Add();
                 MythicAbilities.AbundantPreparationGreater.Add();
@@ -29,8 +28,10 @@ namespace MythicArcanist.NewContent
                 Spells.MageShield2.Add();
                 Spells.MagicMissileGreater.Add();
                 Spells.MagicMissileMastered.Add();
-                ArcanistExploits.MartialTraining.Add();
-                ArcanistExploits.MartialTrainingGreater.Add();
+                ClassFeatures.ArcanistExploits.MartialTraining.Add();
+                ClassFeatures.ArcanistExploits.MartialTrainingGreater.Add();
+                ClassFeatures.LoremasterSecrets.LoremasterPaladinSpellSecret.Add();
+                Archetypes.Fighter.TwoWeaponWarrior.Add();
             }
         }
     }

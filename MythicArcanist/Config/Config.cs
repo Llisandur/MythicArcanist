@@ -22,6 +22,7 @@ namespace MythicArcanist.Config
     public class Homebrew : IUpdatableSettings
     {
         public bool NewSettingsOffByDefault = false;
+        public SettingGroup Loremaster = new SettingGroup();
         public SettingGroup MythicAbilities = new SettingGroup();
 
         public void Init()
@@ -33,6 +34,7 @@ namespace MythicArcanist.Config
         {
             var loadedSettings = userSettings as Homebrew;
             NewSettingsOffByDefault = loadedSettings.NewSettingsOffByDefault;
+            Loremaster.LoadSettingGroup(loadedSettings.Loremaster, NewSettingsOffByDefault);
             MythicAbilities.LoadSettingGroup(loadedSettings.MythicAbilities, NewSettingsOffByDefault);
         }
     }
