@@ -9,6 +9,7 @@ using Kingmaker.UnitLogic.Abilities.Components.Base;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.Mechanics;
 using Kingmaker.UnitLogic.Mechanics.Actions;
+using Kingmaker.UnitLogic.Mechanics.Components;
 using Kingmaker.UnitLogic.Abilities;
 using Kingmaker.Utility;
 using TabletopTweaks.Core.Utilities;
@@ -35,6 +36,7 @@ namespace MythicArcanist.NewContent.Spells
             var Buff = SpellCopyBuff.CreateCopy(ThisModContext, $"{SpellName}Buff", bp =>
             {
                 bp.SetNameDescription(ThisModContext, SpellDisplay, SpellDesc);
+                bp.GetComponent<ContextRankConfig>().m_UseMax = true;
             });
 
             var Spell = SpellCopy.CreateCopy(ThisModContext, SpellName, bp =>
