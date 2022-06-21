@@ -16,7 +16,7 @@ using Kingmaker.UnitLogic.Mechanics;
 
 namespace MythicArcanist.NewComponents
 {
-    public class AEMatrtialTraining : UnitFactComponentDelegate<AEMatrtialTraining>
+    public class AEMartialTraining : UnitFactComponentDelegate<AEMartialTraining>
     {
         private StatType Stat = StatType.BaseAttackBonus;
         public int Value;

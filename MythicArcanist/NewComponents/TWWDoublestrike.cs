@@ -15,6 +15,8 @@ namespace MythicArcanist.NewComponents
 {
     public class TWWDoublestrike : AbilityCustomLogic
     {
+        /*Doublestrike (Ex): At 9th level, a two-weapon warrior may, as a standard action, make one attack with both his primary and secondary weapons. 
+         The penalties for attacking with two weapons apply normally.*/
         private class EventHandlers : IDisposable
         {
             private readonly List<object> m_Handlers = new List<object>();

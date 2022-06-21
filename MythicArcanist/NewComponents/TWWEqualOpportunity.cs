@@ -9,6 +9,8 @@ using Kingmaker.Items;
 
 namespace MythicArcanist.NewComponents
 {
+	/*Equal Opportunity (Ex): At 13th level, when a two-weapon warrior makes an attack of opportunity, he may attack once with both his primary and secondary weapons. 
+	 The penalties for attacking with two weapons apply normally.*/
     public class TWWEqualOpportunity : UnitFactComponentDelegate<AttackBonusConditional.RuntimeData>, 
 		IInitiatorRulebookHandler<RuleAttackWithWeapon>, IRulebookHandler<RuleAttackWithWeapon>, 
 		ISubscriber, IInitiatorRulebookSubscriber

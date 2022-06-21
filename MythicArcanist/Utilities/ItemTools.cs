@@ -43,18 +43,18 @@ namespace MythicArcanist.Utilities
                 while (SpellLevel == -1)
                 {
                     if (WizardSpellLevel > 0) { SpellLevel = WizardSpellLevel; break; }
-                    if (ClericSpellLevel > 0) { SpellLevel = ClericSpellLevel; break; }
-                    if (DruidSpellLevel > 0) { SpellLevel = DruidSpellLevel; break; }
-                    if (ShamanSpellLevel > 0) { SpellLevel = ShamanSpellLevel; break; }
-                    if (BardSpellLevel > 0) { SpellLevel = BardSpellLevel; break; }
-                    if (AlchemistSpellLevel > 0) { SpellLevel = AlchemistSpellLevel; break; }
-                    if (InquisitorSpellLevel > 0) { SpellLevel = InquisitorSpellLevel; break; }
-                    if (MagusSpellLevel > 0) { SpellLevel = MagusSpellLevel; break; }
-                    if (HunterSpellLevel > 0) { SpellLevel = HunterSpellLevel; break; }
-                    if (WarpriestSpellLevel > 0) { SpellLevel = WarpriestSpellLevel; break; }
-                    if (PaladinSpellLevel > 0) { SpellLevel = PaladinSpellLevel; break; }
-                    if (RangerSpellLevel > 0) { SpellLevel = RangerSpellLevel; break; }
-                    if (BloodragerSpellLevel > 0) { SpellLevel = BloodragerSpellLevel; break; }
+                    else if (ClericSpellLevel > 0) { SpellLevel = ClericSpellLevel; break; }
+                    else if (DruidSpellLevel > 0) { SpellLevel = DruidSpellLevel; break; }
+                    else if (ShamanSpellLevel > 0) { SpellLevel = ShamanSpellLevel; break; }
+                    else if (BardSpellLevel > 0) { SpellLevel = BardSpellLevel; break; }
+                    else if (AlchemistSpellLevel > 0) { SpellLevel = AlchemistSpellLevel; break; }
+                    else if (InquisitorSpellLevel > 0) { SpellLevel = InquisitorSpellLevel; break; }
+                    else if (MagusSpellLevel > 0) { SpellLevel = MagusSpellLevel; break; }
+                    else if (HunterSpellLevel > 0) { SpellLevel = HunterSpellLevel; break; }
+                    else if (WarpriestSpellLevel > 0) { SpellLevel = WarpriestSpellLevel; break; }
+                    else if (PaladinSpellLevel > 0) { SpellLevel = PaladinSpellLevel; break; }
+                    else if (RangerSpellLevel > 0) { SpellLevel = RangerSpellLevel; break; }
+                    else if (BloodragerSpellLevel > 0) { SpellLevel = BloodragerSpellLevel; break; }
                 }
 
                 if (Spell.GetComponents<SpellListComponent>().Any(c => c.m_SpellList.Get() == (

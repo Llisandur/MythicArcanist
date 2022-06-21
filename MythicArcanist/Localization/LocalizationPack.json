@@ -683,6 +683,28 @@
       "esES": null
     },
     {
+      "Key": "2c03445c330448d684f6b29f696dad06",
+      "SimpleName": "TwoWeaponWarriorDefDoublestrikeDisarmBuff.Name",
+      "ProcessTemplates": false,
+      "enGB": "Deft Doublestrike - Disarm",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
+      "Key": "6c75dbc249d140f0a69724e10c902352",
+      "SimpleName": "TwoWeaponWarriorDefDoublestrikeSunderBuff.Name",
+      "ProcessTemplates": false,
+      "enGB": "Deft Doublestrike - Sunder",
+      "ruRU": null,
+      "deDE": null,
+      "frFR": null,
+      "zhCN": null,
+      "esES": null
+    },
+    {
       "Key": "57b4673e0fe0404f87f565939ab6f67b",
       "SimpleName": "TwoWeaponWarriorDefensiveFlurry.Description",
       "ProcessTemplates": true,

@@ -70,6 +70,15 @@ namespace MythicArcanist.NewContent.Archetypes.Fighter
                     "melee attacks until the beginning of his next turn. This bonus increases by +1 every four levels after 3rd.";
             var DefensiveFlurryBuff = Helpers.CreateBlueprint<BlueprintBuff>(ThisModContext, "TwoWeaponWarriorDefensiveFlurryBuff", bp =>
             {
+                bp.SetName(ThisModContext, DefensiveFlurryName);
+                bp.SetDescription(ThisModContext, DefensiveFlurryDesc);
+                bp.m_DescriptionShort = Helpers.CreateString(ThisModContext, $"{bp.name}.DescriptionShort", "");
+                bp.IsClassFeature = true;
+                //bp.m_Flags = BlueprintBuff.Flags.HiddenInUi;
+                bp.Stacking = StackingType.Replace;
+                bp.Ranks = 1;
+                bp.TickEachSecond = false;
+                bp.Frequency = DurationRate.Rounds;
                 bp.AddComponent<ACBonusAgainstAttacks>(c =>
                 {
                     c.AgainstMeleeOnly = true;
@@ -98,15 +107,6 @@ namespace MythicArcanist.NewContent.Archetypes.Fighter
                         BlueprintTools.GetBlueprintReference<BlueprintCharacterClassReference>("48ac8db94d5de7645906c7d0ad3bcfbd") //FighterClass
                     };
                 });
-                bp.SetName(ThisModContext, DefensiveFlurryName);
-                bp.SetDescription(ThisModContext, DefensiveFlurryDesc);
-                bp.m_DescriptionShort = Helpers.CreateString(ThisModContext, $"{bp.name}.DescriptionShort", "");
-                bp.IsClassFeature = true;
-                //bp.m_Flags = BlueprintBuff.Flags.HiddenInUi;
-                bp.Stacking = StackingType.Replace;
-                bp.Ranks = 1;
-                bp.TickEachSecond = false;
-                bp.Frequency = DurationRate.Rounds;
             });
             var DefensiveFlurry = Helpers.CreateBlueprint<BlueprintFeature>(ThisModContext, "TwoWeaponWarriorDefensiveFlurry", bp =>
             {
@@ -115,7 +115,7 @@ namespace MythicArcanist.NewContent.Archetypes.Fighter
                 bp.m_Icon = BlueprintTools.GetBlueprint<BlueprintFeature>("be50f4e97fff8a24ba92561f1694a945").Icon; //SpellStrikeFeature
                 bp.IsClassFeature = true;
                 bp.Ranks = 5;
-                bp.AddComponent<TWWDefensiveFlurry>(c =>
+                bp.AddComponent<AddFullAttackDualWieldTrigger>(c =>
                 {
                     c.Action = Helpers.CreateActionList(
                         Helpers.Create<ContextActionApplyBuff>(c =>
@@ -132,6 +132,7 @@ namespace MythicArcanist.NewContent.Archetypes.Fighter
                 });
             });
             #endregion
+            #region Twin Blades
             var TwinBlades = Helpers.CreateBlueprint<BlueprintFeature>(ThisModContext, "TwoWeaponWarriorTwinBlades", bp =>
             {
                 bp.SetName(ThisModContext, "Twin Blades");
@@ -142,6 +143,7 @@ namespace MythicArcanist.NewContent.Archetypes.Fighter
                 bp.IsClassFeature = true;
                 bp.AddComponent(new TWWTwinBlades());
             });
+            #endregion
             #region Doublestrike
             string DoublestrikeName = "Doublestrike";
             string DoublestrikeDescription = "At 9th level, a two-weapon warrior may, as a standard action, make one attack with both his primary and secondary weapons. " +
@@ -179,6 +181,7 @@ namespace MythicArcanist.NewContent.Archetypes.Fighter
                 });
             });
             #endregion
+            #region Improved Balance
             var ImprovedBalance = Helpers.CreateBlueprint<BlueprintFeature>(ThisModContext, "TwoWeaponWarriorImprovedBalance", bp =>
             {
                 bp.SetName(ThisModContext, "Improved Balance");
@@ -192,6 +195,7 @@ namespace MythicArcanist.NewContent.Archetypes.Fighter
                     c.m_MythicBlueprint = TwoWeaponFightingMythicFeat;
                 });
             });
+            #endregion
             #region Equal Opportunity
             string EqualOpportunityName = "Equal Opportunity";
             string EqualOpportunityDesc = "At 13th level, when a two-weapon warrior makes an attack of opportunity, he may attack once with both his primary and secondary " +
@@ -202,6 +206,7 @@ namespace MythicArcanist.NewContent.Archetypes.Fighter
                 bp.SetName(ThisModContext, EqualOpportunityName);
                 bp.SetDescription(ThisModContext, EqualOpportunityDesc);
                 bp.m_Icon = EqualOpportunityIcon;
+                bp.m_Flags = BlueprintBuff.Flags.HiddenInUi;
                 bp.AddComponent(new TWWEqualOpportunity());
             });
             var EqualOpportunityToggleAbility = Helpers.CreateBlueprint<BlueprintActivatableAbility>(ThisModContext, "TwoWeaponWarriorEqualOpportunityToggleAbility", bp =>
@@ -210,7 +215,7 @@ namespace MythicArcanist.NewContent.Archetypes.Fighter
                 bp.SetDescription(ThisModContext, EqualOpportunityDesc);
                 bp.m_Icon = EqualOpportunityIcon;
                 bp.m_Buff = EqualOpportunityBuff.ToReference<BlueprintBuffReference>();
-                bp.IsOnByDefault = false;
+                bp.IsOnByDefault = true;
                 bp.DoNotTurnOffOnRest = true;
                 bp.DeactivateImmediately = true;
             });
@@ -229,6 +234,7 @@ namespace MythicArcanist.NewContent.Archetypes.Fighter
                 });
             });
             #endregion
+            #region Perfect Balance
             var PerfectBalance = Helpers.CreateBlueprint<BlueprintFeature>(ThisModContext, "TwoWeaponWarriorPerfectBalance", bp =>
             {
                 bp.SetName(ThisModContext, "Perfect Balance");
@@ -242,22 +248,146 @@ namespace MythicArcanist.NewContent.Archetypes.Fighter
                     c.m_MythicBlueprint = TwoWeaponFightingMythicFeat;
                 });
             });
+            #endregion
+            #region Deft Doublestrike
+            string DeftDoublestrikeName = "Deft Doublestrike";
+            string DeftDoublestrikeDesc = "At 17th level, when a two-weapon warrior hits an opponent with both weapons, he can make a disarm or sunder attempt (or trip, " +
+                    "if one or both weapons can be used to trip) against that opponent as an immediate action that does not provoke attacks of opportunity.";
+            var DeftDoublestrikeIcon = BlueprintTools.GetBlueprint<BlueprintFeature>("72dcf1fb106d5054a81fd804fdc168d3").Icon; //MasterStrike
+            var DeftDoublestrikeTestBuff = Helpers.CreateBlueprint<BlueprintBuff>(ThisModContext, "TwoWeaponWarriorDeftDoublestrikeTestBuff", bp =>
+            {
+                bp.SetName(ThisModContext, DeftDoublestrikeName);
+                bp.SetDescription(ThisModContext, DeftDoublestrikeDesc);
+                bp.m_Icon = DeftDoublestrikeIcon;
+                bp.m_Flags = BlueprintBuff.Flags.HiddenInUi;
+            });
+            #region Disarm
+            var DeftDoublestrikeDisarmIcon = BlueprintTools.GetBlueprint<BlueprintAbility>("45d94c6db453cfc4a9b99b72d6afe6f6").Icon; //DisarmAction
+            var DefDoublestrikeDisarmBuff = Helpers.CreateBlueprint<BlueprintBuff>(ThisModContext, "TwoWeaponWarriorDefDoublestrikeDisarmBuff", bp =>
+            {
+                bp.SetName(ThisModContext, $"{DeftDoublestrikeName} - Disarm");
+                bp.SetDescription(ThisModContext, DeftDoublestrikeDesc);
+                bp.m_Icon = DeftDoublestrikeDisarmIcon;
+                bp.m_Flags = BlueprintBuff.Flags.HiddenInUi;
+                bp.AddComponent<TWWDeftDoublestrike>(c =>
+                {
+                    c.m_TestBuff = BlueprintTools.GetModBlueprintReference<BlueprintBuffReference>(ThisModContext, "TwoWeaponWarriorDeftDoublestrikeTestBuff");
+                    c.Action = Helpers.CreateActionList(
+                        Helpers.Create<ContextActionCombatManeuver>(c =>
+                        {
+                            c.Type = Kingmaker.RuleSystem.Rules.CombatManeuver.Disarm;
+                        }));
+                });
+            });
+            var DeftDoublestrikeDisarmToggleAbility = Helpers.CreateBlueprint<BlueprintActivatableAbility>(ThisModContext, "TwoWeaponWarriorDeftDoublestrikeDisarmToggleAbility", bp =>
+            {
+                bp.SetName(ThisModContext, $"{DeftDoublestrikeName} - Disarm");
+                bp.SetDescription(ThisModContext, DeftDoublestrikeDesc);
+                bp.m_Icon = DeftDoublestrikeDisarmIcon;
+                bp.m_Buff = DefDoublestrikeDisarmBuff.ToReference<BlueprintBuffReference>();
+                bp.IsOnByDefault = true;
+                bp.DoNotTurnOffOnRest = true;
+                bp.DeactivateImmediately = true;
+                bp.Group = ActivatableAbilityGroup.CombatManeuverStrike;
+            });
+            #endregion
+            #region Sunder
+            var DeftDoublestrikeSunderIcon = BlueprintTools.GetBlueprint<BlueprintAbility>("fa9bfb9fd997faf49a108c4b17a00504").Icon; //SunderAction
+            var DefDoublestrikeSunderBuff = Helpers.CreateBlueprint<BlueprintBuff>(ThisModContext, "TwoWeaponWarriorDefDoublestrikeSunderBuff", bp =>
+            {
+                bp.SetName(ThisModContext, $"{DeftDoublestrikeName} - Sunder");
+                bp.SetDescription(ThisModContext, DeftDoublestrikeDesc);
+                bp.m_Icon = DeftDoublestrikeSunderIcon;
+                bp.m_Flags = BlueprintBuff.Flags.HiddenInUi;
+                bp.AddComponent<TWWDeftDoublestrike>(c =>
+                {
+                    c.m_TestBuff = BlueprintTools.GetModBlueprintReference<BlueprintBuffReference>(ThisModContext, "TwoWeaponWarriorDeftDoublestrikeTestBuff");
+                    c.Action = Helpers.CreateActionList(
+                        Helpers.Create<ContextActionCombatManeuver>(c =>
+                        {
+                            c.Type = Kingmaker.RuleSystem.Rules.CombatManeuver.SunderArmor;
+                        }));
+                });
+            });
+            var DeftDoublestrikeSunderToggleAbility = Helpers.CreateBlueprint<BlueprintActivatableAbility>(ThisModContext, "TwoWeaponWarriorDeftDoublestrikeSunderToggleAbility", bp =>
+            {
+                bp.SetName(ThisModContext, $"{DeftDoublestrikeName} - Sunder");
+                bp.SetDescription(ThisModContext, DeftDoublestrikeDesc);
+                bp.m_Icon = DeftDoublestrikeSunderIcon;
+                bp.m_Buff = DefDoublestrikeSunderBuff.ToReference<BlueprintBuffReference>();
+                bp.IsOnByDefault = true;
+                bp.DoNotTurnOffOnRest = true;
+                bp.DeactivateImmediately = true;
+                bp.Group = ActivatableAbilityGroup.CombatManeuverStrike;
+            });
+            #endregion
             var DeftDoublestrike = Helpers.CreateBlueprint<BlueprintFeature>(ThisModContext, "TwoWeaponWarriorDeftDoublestrike", bp =>
             {
-                bp.SetName(ThisModContext, "Deft Doublestrike");
-                bp.SetDescription(ThisModContext, "At 17th level, when a two-weapon warrior hits an opponent with both weapons, he can make a disarm or sunder attempt (or trip, " +
-                    "if one or both weapons can be used to trip) against that opponent as an immediate action that does not provoke attacks of opportunity.");
-                bp.m_Icon = BlueprintTools.GetBlueprint<BlueprintFeature>("72dcf1fb106d5054a81fd804fdc168d3").Icon; //MasterStrike
+                bp.SetName(ThisModContext, DeftDoublestrikeName);
+                bp.SetDescription(ThisModContext, DeftDoublestrikeDesc);
+                bp.m_Icon = DeftDoublestrikeIcon;
                 bp.IsClassFeature = true;
+                bp.AddComponent<AddFacts>(c =>
+                {
+                    c.m_Facts = new BlueprintUnitFactReference[]
+                    {
+                        DeftDoublestrikeDisarmToggleAbility.ToReference<BlueprintUnitFactReference>(),
+                        DeftDoublestrikeSunderToggleAbility.ToReference<BlueprintUnitFactReference>()
+                    };
+                });
+            });
+            #endregion
+            #region Deadly Defense
+            string DeadlyDefenseName = "Deadly Defense";
+            string DeadlyDefenseDesc = "At 19th level, when a two-weapon warrior makes a full attack with both weapons, every creature that hits him with a melee attack " +
+                    "before the beginning of his next turn provokes an attack of opportunity from the warrior.";
+            var DeadlyDefenseIcon = BlueprintTools.GetBlueprint<BlueprintAbility>("464a7193519429f48b4d190acb753cf0").Icon; //Grace
+            var DeadlyDefenseBuff = Helpers.CreateBlueprint<BlueprintBuff>(ThisModContext, "TwoWeaponWarriorDeadlyDefenseBuff", bp =>
+            {
+                bp.SetName(ThisModContext, DeadlyDefenseName);
+                bp.SetDescription(ThisModContext, DeadlyDefenseDesc);
+                bp.m_DescriptionShort = Helpers.CreateString(ThisModContext, $"{bp.name}.DescriptionShort", "");
+                bp.IsClassFeature = true;
+                bp.m_Flags = BlueprintBuff.Flags.HiddenInUi;
+                bp.Stacking = StackingType.Replace;
+                bp.Ranks = 1;
+                bp.TickEachSecond = false;
+                bp.Frequency = DurationRate.Rounds;
+                //bp.AddComponent(new TWWDeadlyDefense());
+                bp.AddComponent<AddTargetAttackWithWeaponTrigger>(c =>
+                {
+                    c.OnlyHit = true;
+                    c.OnlyMelee = true;
+                    c.ActionsOnAttacker = Helpers.CreateActionList(
+                        Helpers.Create<ContextActionProvokeAttackOfOpportunity>(a =>
+                        {
+                            a.ApplyToCaster = false;
+                        }));
+                });
             });
             var DeadlyDefense = Helpers.CreateBlueprint<BlueprintFeature>(ThisModContext, "TwoWeaponWarriorDeadlyDefense", bp =>
             {
-                bp.SetName(ThisModContext, "Deadly Defense");
-                bp.SetDescription(ThisModContext, "At 19th level, when a two-weapon warrior makes a full attack with both weapons, every creature that hits him with a melee attack " +
-                    "before the beginning of his next turn provokes an attack of opportunity from the warrior.");
-                bp.m_Icon = BlueprintTools.GetBlueprint<BlueprintAbility>("464a7193519429f48b4d190acb753cf0").Icon; //Grace
+                bp.SetName(ThisModContext, DeadlyDefenseName);
+                bp.SetDescription(ThisModContext, DeadlyDefenseDesc);
+                bp.m_Icon = DeadlyDefenseIcon;
                 bp.IsClassFeature = true;
+                bp.AddComponent<AddFullAttackDualWieldTrigger>(c =>
+                {
+                    c.Action = Helpers.CreateActionList(
+                        Helpers.Create<ContextActionApplyBuff>(c =>
+                        {
+                            c.m_Buff = DeadlyDefenseBuff.ToReference<BlueprintBuffReference>();
+                            c.DurationValue = new ContextDurationValue()
+                            {
+                                Rate = DurationRate.Rounds,
+                                DiceType = DiceType.Zero,
+                                DiceCountValue = 0,
+                                BonusValue = 1
+                            };
+                        }));
+                });
             });
+            #endregion
             #endregion
 
             var Archetype = Helpers.CreateBlueprint<BlueprintArchetype>(ThisModContext, "TwoWeaponWarrior", bp =>

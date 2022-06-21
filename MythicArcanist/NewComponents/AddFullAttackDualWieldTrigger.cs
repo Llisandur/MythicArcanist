@@ -10,9 +10,11 @@ using Kingmaker.UnitLogic.Mechanics.ContextData;
 
 namespace MythicArcanist.NewComponents
 {
-    /*Defensive Flurry (Ex): At 3rd level, when a two-weapon warrior makes a full attack with both weapons, he gains a +1 dodge bonus to AC against melee attacks 
-	 until the beginning of his next turn. This bonus increases by +1 every four levels after 3rd.*/
-    public class TWWDefensiveFlurry : UnitFactComponentDelegate, ISubscriber, IInitiatorRulebookSubscriber,
+	/*Defensive Flurry (Ex): At 3rd level, when a two-weapon warrior makes a full attack with both weapons, he gains a +1 dodge bonus to AC against melee attacks 
+	 until the beginning of his next turn. This bonus increases by +1 every four levels after 3rd.
+	Deadly Defense (Ex): At 19th level, when a two-weapon warrior makes a full attack with both weapons, every creature that hits him with a melee 
+	 attack before the beginning of his next turn provokes an attack of opportunity from the warrior.*/
+	public class AddFullAttackDualWieldTrigger : UnitFactComponentDelegate, ISubscriber, IInitiatorRulebookSubscriber,
 		IInitiatorRulebookHandler<RuleAttackWithWeapon>, IRulebookHandler<RuleAttackWithWeapon>
 	{
 		public ActionList Action;
@@ -38,7 +40,7 @@ namespace MythicArcanist.NewComponents
 		public void OnEventDidTrigger(RuleAttackWithWeapon evt)
 		{
 		}
-		private static void RunActions(TWWDefensiveFlurry c, RuleAttackWithWeapon rule, MechanicsContext context, EntityFact fact)
+		private static void RunActions(AddFullAttackDualWieldTrigger c, RuleAttackWithWeapon rule, MechanicsContext context, EntityFact fact)
 		{
 			UnitEntityData unitEntityData = rule.Initiator;
 			using (ContextData<ContextAttackData>.Request().Setup(rule.AttackRoll))
