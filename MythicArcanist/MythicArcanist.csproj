@@ -28,13 +28,23 @@
   </Target>
 
   <ItemGroup>
+    <None Remove="Config\AddedContent.json" />
     <None Remove="Config\Blueprints.json" />
     <None Remove="Config\Homebrew.json" />
+    <None Remove="Config\ThirdParty.json" />
     <None Remove="Localization\LocalizationPack.json" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Config\Blueprints.json" />
+    <EmbeddedResource Include="Config\AddedContent.json">
+		<CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	</EmbeddedResource>
+    <EmbeddedResource Include="Config\Blueprints.json">
+		<CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	</EmbeddedResource>
+    <EmbeddedResource Include="Config\ThirdParty.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Config\Homebrew.json">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
@@ -57,7 +67,7 @@
       <CopyLocal>False</CopyLocal>
     </Reference>
     <Reference Include="Assembly-CSharp">
-      <HintPath>$(SolutionDir)lib\Assembly-CSharp_public.dll</HintPath>
+      <HintPath>$(SolutionDir)\lib\Assembly-CSharp_public.dll</HintPath>
       <Private>false</Private>
       <CopyLocal>False</CopyLocal>
     </Reference>
@@ -102,13 +112,16 @@
       <CopyLocal>False</CopyLocal>
     </Reference>
     <Reference Include="UniRx">
-      <HintPath>$(SolutionDir)lib\UniRx_public.dll</HintPath>
+      <HintPath>$(SolutionDir)\lib\UniRx_public.dll</HintPath>
       <Private>False</Private>
       <CopyLocal>False</CopyLocal>
     </Reference>
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="Assets\ArcanistExploits\Icon_MartialTraining.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Assets\MythicAbilities\Icon_AbundantPreparation.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -122,6 +135,12 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="Assets\Spells\Icon_MageShield2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Assets\Spells\Icon_MagicMissileGreater.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Assets\Spells\Icon_MagicMissileMastered.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="Info.json">

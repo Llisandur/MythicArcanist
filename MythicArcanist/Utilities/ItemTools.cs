@@ -13,34 +13,7 @@ using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.Utility;
 using TabletopTweaks.Core.ModLogic;
 using TabletopTweaks.Core.Utilities;
-
-using Kingmaker.Blueprints;
-using Kingmaker.Blueprints.Classes;
-using Kingmaker.Blueprints.Classes.Prerequisites;
-using Kingmaker.Blueprints.Classes.Selection;
-using Kingmaker.Blueprints.Classes.Spells;
-using Kingmaker.Blueprints.Items;
 using Kingmaker.Blueprints.Loot;
-using Kingmaker.Designers.Mechanics.Facts;
-using Kingmaker.Designers.Mechanics.Recommendations;
-using Kingmaker.EntitySystem.Stats;
-using Kingmaker.Enums.Damage;
-using Kingmaker.PubSubSystem;
-using Kingmaker.RuleSystem.Rules.Damage;
-using Kingmaker.UnitLogic;
-using Kingmaker.UnitLogic.Abilities;
-using Kingmaker.UnitLogic.Abilities.Blueprints;
-using Kingmaker.UnitLogic.Abilities.Components;
-using Kingmaker.UnitLogic.Buffs.Blueprints;
-using Kingmaker.UnitLogic.FactLogic;
-using Kingmaker.UnitLogic.Mechanics;
-using Kingmaker.UnitLogic.Mechanics.Actions;
-using Kingmaker.UnitLogic.Mechanics.Components;
-using Kingmaker.Utility;
-using System.Linq;
-using TabletopTweaks.Core.MechanicsChanges;
-using TabletopTweaks.Core.NewComponents;
-using TabletopTweaks.Core.Utilities;
 
 namespace MythicArcanist.Utilities
 {
@@ -51,7 +24,38 @@ namespace MythicArcanist.Utilities
             var Scroll = Helpers.CreateBlueprint<BlueprintItemEquipmentUsable>(modContext, $"ScrollOf{Spell.name}", bp =>
             {
                 var CasterLevel = 1;
-                var SpellLevel = Spell.GetComponent<SpellListComponent>().SpellLevel;
+                var SpellLevel = -1;
+                
+                int WizardSpellLevel = GetSpellLevel(Spell, SpellTools.SpellList.WizardSpellList);
+                int ClericSpellLevel = GetSpellLevel(Spell, SpellTools.SpellList.ClericSpellList);
+                int DruidSpellLevel = GetSpellLevel(Spell, SpellTools.SpellList.DruidSpellList);
+                int ShamanSpellLevel = GetSpellLevel(Spell, SpellTools.SpellList.ShamanSpelllist);
+                int BardSpellLevel = GetSpellLevel(Spell, SpellTools.SpellList.BardSpellList);
+                int AlchemistSpellLevel = GetSpellLevel(Spell, SpellTools.SpellList.AlchemistSpellList);
+                int InquisitorSpellLevel = GetSpellLevel(Spell, SpellTools.SpellList.InquisitorSpellList);
+                int MagusSpellLevel = GetSpellLevel(Spell, SpellTools.SpellList.MagusSpellList);
+                int HunterSpellLevel = GetSpellLevel(Spell, SpellTools.SpellList.HunterSpelllist);
+                int WarpriestSpellLevel = GetSpellLevel(Spell, SpellTools.SpellList.WarpriestSpelllist);
+                int PaladinSpellLevel = GetSpellLevel(Spell, SpellTools.SpellList.PaladinSpellList);
+                int RangerSpellLevel = GetSpellLevel(Spell, SpellTools.SpellList.RangerSpellList);
+                int BloodragerSpellLevel = GetSpellLevel(Spell, SpellTools.SpellList.BloodragerSpellList);
+
+                while (SpellLevel == -1)
+                {
+                    if (WizardSpellLevel > 0) { SpellLevel = WizardSpellLevel; break; }
+                    else if (ClericSpellLevel > 0) { SpellLevel = ClericSpellLevel; break; }
+                    else if (DruidSpellLevel > 0) { SpellLevel = DruidSpellLevel; break; }
+                    else if (ShamanSpellLevel > 0) { SpellLevel = ShamanSpellLevel; break; }
+                    else if (BardSpellLevel > 0) { SpellLevel = BardSpellLevel; break; }
+                    else if (AlchemistSpellLevel > 0) { SpellLevel = AlchemistSpellLevel; break; }
+                    else if (InquisitorSpellLevel > 0) { SpellLevel = InquisitorSpellLevel; break; }
+                    else if (MagusSpellLevel > 0) { SpellLevel = MagusSpellLevel; break; }
+                    else if (HunterSpellLevel > 0) { SpellLevel = HunterSpellLevel; break; }
+                    else if (WarpriestSpellLevel > 0) { SpellLevel = WarpriestSpellLevel; break; }
+                    else if (PaladinSpellLevel > 0) { SpellLevel = PaladinSpellLevel; break; }
+                    else if (RangerSpellLevel > 0) { SpellLevel = RangerSpellLevel; break; }
+                    else if (BloodragerSpellLevel > 0) { SpellLevel = BloodragerSpellLevel; break; }
+                }
 
                 if (Spell.GetComponents<SpellListComponent>().Any(c => c.m_SpellList.Get() == (
                     SpellTools.SpellList.WizardSpellList |
@@ -59,6 +63,7 @@ namespace MythicArcanist.Utilities
                     SpellTools.SpellList.DruidSpellList |
                     SpellTools.SpellList.ShamanSpelllist)))
                 {
+                    
                     CasterLevel = GetCasterLevel9thLevelPrepared(SpellLevel);
                 }
                 else if (Spell.GetComponents<SpellListComponent>().Any(c => c.m_SpellList.Get() == (
@@ -129,7 +134,7 @@ namespace MythicArcanist.Utilities
             {
             CraftRoot.m_ScrollsItems.Add(Scroll.ToReference<BlueprintItemEquipmentUsableReference>());
             }
-            modContext.Logger.Log($"Patched: {CraftRoot.ToReference<CraftRoot.Reference>()} - {CraftRoot.name} added {Scroll.ToReference<BlueprintItemEquipmentUsableReference>()} - {Scroll.name}");
+            modContext.Logger.Log($"Patched:{Scroll.ToReference<BlueprintItemEquipmentUsableReference>()} - {Scroll.name} added to {CraftRoot.ToReference<CraftRoot.Reference>()} - {CraftRoot.name}");
         }
         public static void AddToVendor(ModContextBase modContext ,BlueprintItemEquipmentUsable Item, int Count, BlueprintSharedVendorTable VendorTable)
         {
@@ -144,7 +149,15 @@ namespace MythicArcanist.Utilities
             });
             modContext.Logger.Log($"Added: {Item} to {VendorTable}.");
         }
-            private static int GetCasterLevel9thLevelPrepared(int SpellLevel)
+        private static int GetSpellLevel(BlueprintAbility Spell, BlueprintSpellList ClassSpellList)
+        {
+            foreach (SpellListComponent SpellList in Spell.GetComponents<SpellListComponent>())
+            {
+                if (Spell.GetComponent<SpellListComponent>().m_SpellList.Is(ClassSpellList)) { return SpellList.SpellLevel; }
+            }
+            return -1;
+        }
+        private static int GetCasterLevel9thLevelPrepared(int SpellLevel)
         {
             switch (SpellLevel)
             {

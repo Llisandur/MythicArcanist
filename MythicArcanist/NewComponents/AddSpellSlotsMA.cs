@@ -10,6 +10,8 @@ namespace MythicArcanist.NewComponents
     [AllowedOn(typeof(BlueprintFeature), false)]
     public class AddSpellSlotsMA : UnitFactComponentDelegate, IGetSpellSlotsCountHandler
     {
+        public int Amount;
+        public int[] Levels;
         public void HandleGetSlotsCount(Spellbook spellbook, int spellLevel, ref int __result)
         {
             if (spellbook.Blueprint.IsArcanist)
@@ -21,16 +23,7 @@ namespace MythicArcanist.NewComponents
                         __result += Amount;
                     }
                 }
-                //if (spellLevel >= MinLevel && spellLevel <= MaxLevel)
-                //{
-                //    __result += Amount;
-                //}
             }
         }
-
-        public int Amount;
-        //public int MinLevel;
-        //public int MaxLevel;
-        public int[] Levels;
     }
 }

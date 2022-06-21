@@ -16,16 +16,22 @@ namespace MythicArcanist.NewContent
             {
                 if (Initialized) return;
                 Initialized = true;
-                MAContext.Logger.LogHeader("Loading New Content");
+                ThisModContext.Logger.LogHeader("Loading New Content");
 
-                MythicAbilities.AbundantPreparation.AddAbundantPreparation();
-                MythicAbilities.AbundantPreparationImproved.AddAbundantPreparationImproved();
-                MythicAbilities.AbundantPreparationGreater.AddAbundantPreparationGreater();
-                Spells.ForceArmor.AddForceArmor();
-                Spells.MageArmor2.AddMageArmor2();
-                Spells.MageArmor3.AddMageArmor3();
-                Spells.MageArmor4.AddMageArmor4();
-                Spells.MageShield2.AddMageShield2();
+                MythicAbilities.AbundantPreparation.Add();
+                MythicAbilities.AbundantPreparationImproved.Add();
+                MythicAbilities.AbundantPreparationGreater.Add();
+                Spells.ForceArmor.Add();
+                Spells.MageArmor2.Add();
+                Spells.MageArmor3.Add();
+                Spells.MageArmor4.Add();
+                Spells.MageShield2.Add();
+                Spells.MagicMissileGreater.Add();
+                Spells.MagicMissileMastered.Add();
+                ClassFeatures.ArcanistExploits.MartialTraining.Add();
+                ClassFeatures.ArcanistExploits.MartialTrainingGreater.Add();
+                ClassFeatures.LoremasterSecrets.LoremasterPaladinSpellSecret.Add();
+                Archetypes.Fighter.TwoWeaponWarrior.Add();
             }
         }
     }

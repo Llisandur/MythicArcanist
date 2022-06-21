@@ -10,16 +10,16 @@ namespace MythicArcanist.NewContent.MythicAbilities
 {
     static class AbundantPreparationImproved
     {
-        public static void AddAbundantPreparationImproved()
+        public static void Add()
         {
             var ArcanistClass = BlueprintTools.GetBlueprint<BlueprintCharacterClass>("52dbfd8505e22f84fad8d702611f60b7");
-            var icon = AssetLoader.LoadInternal(MAContext, folder: "MythicAbilities", file: "Icon_AbundantPreparation.png");
-            var AbundantPreparation = BlueprintTools.GetModBlueprint<BlueprintFeature>(MAContext, "AbundantPreparationFeature");
+            var icon = AssetLoader.LoadInternal(ThisModContext, folder: "MythicAbilities", file: "Icon_AbundantPreparation.png");
+            var AbundantPreparation = BlueprintTools.GetModBlueprint<BlueprintFeature>(ThisModContext, "AbundantPreparationFeature");
 
-            var AbundantPreparationImprovedFeature = Helpers.CreateBlueprint<BlueprintFeature>(MAContext, "AbundantPreparationImprovedFeature", bp =>
+            var AbundantPreparationImprovedFeature = Helpers.CreateBlueprint<BlueprintFeature>(ThisModContext, "AbundantPreparationImprovedFeature", bp =>
             {
-                bp.SetName(MAContext, "Improved Abundant Preparation");
-                bp.SetDescription(MAContext, "You've studied a way to increase the number of {g|Encyclopedia:Spell}spells{/g} you can prepare per day.\n" +
+                bp.SetName(ThisModContext, "Improved Abundant Preparation");
+                bp.SetDescription(ThisModContext, "You've studied a way to increase the number of {g|Encyclopedia:Spell}spells{/g} you can prepare per day.\n" +
                     "Benefit: You can prepare four more spells per day of 4th, 5th, and 6th levels each. This ability only affects arcanist spellbooks.");
                 bp.m_Icon = icon;
                 bp.Ranks = 1;
@@ -40,12 +40,12 @@ namespace MythicArcanist.NewContent.MythicAbilities
                 }));
                 bp.IsPrerequisiteFor = new List<BlueprintFeatureReference>()
                 {
-                    //BlueprintTools.GetModBlueprint<BlueprintFeature>(MAContext, "AbundantPreparationGreaterFeature").ToReference<BlueprintFeatureReference>()
+                    //BlueprintTools.GetModBlueprint<BlueprintFeature>(ModContext, "AbundantPreparationGreaterFeature").ToReference<BlueprintFeatureReference>()
                 };
                 bp.AddPrerequisiteFeature(AbundantPreparation);
             });
 
-            if (MAContext.Homebrew.MythicAbilities.IsDisabled("AbundantPreparationImproved")) { return; }
+            if (ThisModContext.Homebrew.MythicAbilities.IsDisabled("AbundantPreparationImproved")) { return; }
             FeatTools.AddAsMythicAbility(AbundantPreparationImprovedFeature);
         }
     }
