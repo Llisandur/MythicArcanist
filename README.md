@@ -12,11 +12,25 @@ All changes are configurable and can be disabled via the unity mod manager menu.
 4. Install the mods by dragging the zip file from step 3 and the zip file for this mod into the Unity Mod Manager window under the Mods tab.
 
 ## Added Content
+* Archetypes
+	* Two-Weapon Warrior (Paizo)
+		* Fighter archetype that specializes in dual-wielding.
+
+* Class Features
+	* Loremaster Secret - Paladin Spell Selection (Homebrew)
+		* Added paladin spells to the list of selections.
+	* Arcanist Exploit - Martial Training / Martial Training, Greater
+		* Spend exploit selections to gain base attack bonus.
+
 * Spells
 	* Force Armor (3PP)
 		* A spell for the alchemist, bard, and wizard spellbooks that adds a spell similar to shield of faith for arcane casters.
 	* Mage Armor II / III / IV (3PP)
 		* Higher level versions of mage armor that add +6/+8/+10 AC.
+	* Magic Missile, Greater (3PP)
+		* Higher level magic missile that deals more damage.
+	* Magic Missile, Mastered (3PP)
+		* Even higher level magic missile that deals more damage and has no limit on the number of missiles.
 	* Shield II (3PP)
 		* A higher level version of the shield spell that lasts longer.
 
