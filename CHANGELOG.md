@@ -1,3 +1,9 @@
+## Version 1.3.0
+* Added two-weapon warrior fighter archetype.
+* Added martial training and greater martial training arcanist exploits.
+* Added greater magic missile and mastered magic missile spells.
+* Added paladin spell selection to loremaster secret.
+
 ## Version 1.2.0
 * Inital release version.
 
