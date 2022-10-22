@@ -6,6 +6,8 @@
     "AbundantPreparationImprovedFeature": "e4b53671-0563-49fd-ad00-fbf948c4cd68",
     "ArcanistExploitMartialTraining": "a47e3d50-fe41-4586-8966-0671e64384c5",
     "ArcanistExploitMartialTrainingGreater": "76c3dd0a-e292-46c8-accf-822a770b7ad0",
+    "ArcanistExploitReligiousFocus": "9133ffc5-f0cb-4760-a82a-559eb0cd5470",
+    "ArcanistReligiousFocusSpellList": "e356f6f4-8ff8-48b2-9646-f0657183fa00",
     "ForceArmor": "9e01f8ff-c5f3-4ef2-9592-b6862d209e0f",
     "ForceArmorBuff": "372a7b00-0a3e-4255-9128-93f7c08361d3",
     "LoremasterPaladinSecretArcanist": "83f26d91-9e4b-426d-96d8-09ebf81005fb",
@@ -109,6 +111,7 @@
     "MagicMissile39_Trajectory": "5c65891b-1633-45d3-9237-b7a39f4cf565",
     "MagicMissileGreater": "29ef7370-de43-41b5-981b-d6e2997e7ab6",
     "MagicMissileMastered": "e66810cd-d2a0-499d-866b-c62413b31092",
+    "NatureMageReligiousFocusSpellList": "5dab85db-434c-4f16-baf9-be266649fc3e",
     "ScrollOfForceArmor": "ef5d605d-4c93-47d7-bf65-7c98459aa1a3",
     "ScrollOfMageArmor2": "eee011bb-3358-4568-bfa7-194c44e89ed4",
     "ScrollOfMageArmor3": "dd4b7a55-54e7-430e-8d4f-d0ad0cd3717a",
@@ -134,7 +137,8 @@
     "TwoWeaponWarriorEqualOpportunityToggleAbility": "844e3cd4-2e48-4875-aef0-17bb3de8e8c9",
     "TwoWeaponWarriorImprovedBalance": "2747b6fe-ab08-4870-8868-bcc2a12d4d66",
     "TwoWeaponWarriorPerfectBalance": "8bb508d7-4488-4bec-9ca4-588830f901af",
-    "TwoWeaponWarriorTwinBlades": "2a154f8a-1f0f-4a4f-9975-fb715101fa6a"
+    "TwoWeaponWarriorTwinBlades": "2a154f8a-1f0f-4a4f-9975-fb715101fa6a",
+    "UnletteredArcanistReligiousFocusSpellList": "60c4af92-52f9-4710-abac-734801891c38"
   },
   "DerivedBlueprintMasters": {},
   "DerivedBlueprints": {},

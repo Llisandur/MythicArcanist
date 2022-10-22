@@ -30,6 +30,7 @@ namespace MythicArcanist.NewContent
                 Spells.MagicMissileMastered.Add();
                 ClassFeatures.ArcanistExploits.MartialTraining.Add();
                 ClassFeatures.ArcanistExploits.MartialTrainingGreater.Add();
+                ClassFeatures.ArcanistExploits.ReligiousFocus.Add();
                 ClassFeatures.LoremasterSecrets.LoremasterPaladinSpellSecret.Add();
                 Archetypes.Fighter.TwoWeaponWarrior.Add();
             }

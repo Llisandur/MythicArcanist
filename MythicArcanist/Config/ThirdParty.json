@@ -48,6 +48,11 @@
         "Enabled": true,
         "Homebrew": false,
         "Description": "Adds the Martial Training and Greater Martial Training arcanist exploits."
+      },
+      "ReligiousFocus": {
+        "Enabled": true,
+        "Homebrew": false,
+        "Description": "Adds the Religious Focus arcanist exploits."
       }
     },
     "IsExpanded": true
