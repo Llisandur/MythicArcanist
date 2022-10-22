@@ -8,7 +8,7 @@ namespace MythicArcanist.NewComponents
 
     [AllowMultipleComponents]
     [AllowedOn(typeof(BlueprintFeature), false)]
-    public class AddSpellSlotsMA : UnitFactComponentDelegate, IGetSpellSlotsCountHandler
+    public class AddSpellSlots : UnitFactComponentDelegate, IGetSpellSlotsCountHandler
     {
         public int Amount;
         public int[] Levels;

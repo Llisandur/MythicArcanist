@@ -25,7 +25,7 @@ namespace MythicArcanist.NewContent.MythicAbilities
                 bp.IsClassFeature = true;
                 bp.ReapplyOnLevelUp = false;
                 bp.Groups = new FeatureGroup[] { FeatureGroup.MythicAbility };
-                bp.AddComponent<AddSpellSlotsMA>(c =>
+                bp.AddComponent<AddSpellSlots>(c =>
                 {
                     c.Amount = 4;
                     //c.MinLevel = 1;
