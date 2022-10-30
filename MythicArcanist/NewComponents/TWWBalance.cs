@@ -1,4 +1,5 @@
-﻿using Kingmaker.Enums;
+﻿using System.Linq;
+using Kingmaker.Enums;
 using Kingmaker.Items;
 using Kingmaker.PubSubSystem;
 using Kingmaker.RuleSystem.Rules;
@@ -8,6 +9,7 @@ using TabletopTweaks.Core.Utilities;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using UnityEngine;
+using UnityModManagerNet;
 
 namespace MythicArcanist.NewComponents
 {
@@ -24,8 +26,6 @@ namespace MythicArcanist.NewComponents
 		public BlueprintFeatureReference m_MythicBlueprint;
 		public void OnEventAboutToTrigger(RuleCalculateAttackBonusWithoutTarget evt)
 		{
-			var TFBProdigiousTwoWeaponFighting = BlueprintTools.GetBlueprint<BlueprintFeature>("40f3f714d17347fa9f078d751b777f05"); //TomeOfTheFirebird:ProdigiousTWF
-
 			ItemEntityWeapon maybeWeapon = evt.Initiator.Body.PrimaryHand.MaybeWeapon;
 			ItemEntityWeapon maybeWeapon2 = evt.Initiator.Body.SecondaryHand.MaybeWeapon;
 			RuleAttackWithWeapon ruleAttackWithWeapon = evt.Reason.Rule as RuleAttackWithWeapon;
@@ -68,6 +68,22 @@ namespace MythicArcanist.NewComponents
 					return null;
 				}
 				return mythicBlueprint.Get();
+			}
+		}
+		public BlueprintFeature TFBProdigiousTwoWeaponFighting
+		{
+			get
+			{
+				BlueprintFeatureReference blueprint = null;
+				if (UnityModManager.modEntries.Where(mod => mod.Info.Id.Equals("TomeOfTheFirebird") && mod.Enabled && !mod.ErrorOnLoading).Any())
+				{
+					blueprint = BlueprintTools.GetBlueprintReference<BlueprintFeatureReference>("40f3f714d17347fa9f078d751b777f05"); //TomeOfTheFirebird:ProdigiousTWF
+				}
+				if (blueprint == null)
+				{
+					return null;
+				}
+				return blueprint.Get();
 			}
 		}
 	}
