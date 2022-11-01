@@ -76,6 +76,9 @@
       <Private>false</Private>
       <CopyLocal>False</CopyLocal>
     </Reference>
+    <Reference Include="ModMenu">
+      <HintPath>$(WrathPath)\Mods\ModMenu\ModMenu.dll</HintPath>
+    </Reference>
     <Reference Include="Owlcat.Runtime.Core">
       <HintPath>$(WrathPath)\Wrath_Data\Managed\Owlcat.Runtime.Core.dll</HintPath>
 		<Private>false</Private>
