@@ -1,4 +1,4 @@
-This mod adds an new homebrew mythic ability and several 3rd Part Publisher spells.
+This mod adds a new homebrew mythic ability and several 3rd Party Publisher spells.
 
 Once a game is saved with this mod is enabled it will require this mod to be present to load so do not remove or disable the mod once enabled. You can however disable any feature of the mod at will without breaking saves.
 
