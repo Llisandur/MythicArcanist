@@ -1,3 +1,6 @@
+## Version 1.3.1
+* Fixed log spam from non-loaded feat errors.
+
 ## Version 1.3.0
 * Added two-weapon warrior fighter archetype.
 * Added martial training and greater martial training arcanist exploits.
