@@ -1,3 +1,6 @@
+## Version 1.3.2
+* Added Chinese translation - thanks Kifusou!
+
 ## Version 1.3.1
 * Fixed log spam from non-loaded feat errors.
 

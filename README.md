@@ -48,3 +48,4 @@ Acknowledgments:
 -   @Vek17, @Bubbles and the rest of our great Discord modding community - help.
 -   PS: Wolfie's [Modding Wiki](https://github.com/WittleWolfie/OwlcatModdingWiki/wiki) is an excellent place to start if you want to start modding on your own.
 -   Join our [Discord](https://discord.com/invite/wotr)
+-   Chinese translation by Kifusou.
