@@ -1,3 +1,8 @@
+## Version 1.3.3
+* Change spells to use TTT vendor injector.
+* Fixed scroll creation code to correctly parse spell level.
+* Added support for Dark Codex version of Prodigious Two-Weapon Fighting.
+
 ## Version 1.3.2
 * Added Chinese translation - thanks Kifusou!
 
