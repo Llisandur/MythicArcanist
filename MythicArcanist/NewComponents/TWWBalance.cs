@@ -40,9 +40,10 @@ namespace MythicArcanist.NewComponents
 			UnitPartWeaponTraining unitPartWeaponTraining = base.Owner.Get<UnitPartWeaponTraining>();
 			bool flag2 = base.Owner.State.Features.EffortlessDualWielding && unitPartWeaponTraining != null && unitPartWeaponTraining.IsSuitableWeapon(maybeWeapon2);
 			bool flag3 = base.Owner.HasFact(TFBProdigiousTwoWeaponFighting) && TFBProdigiousTwoWeaponFighting != null;
+			bool flag4 = base.Owner.HasFact(DCProdigiousTwoWeaponFighting) && DCProdigiousTwoWeaponFighting != null;
 			if (!maybeWeapon2.Blueprint.IsLight && !maybeWeapon.Blueprint.Double && !maybeWeapon2.IsShield && !flag2)
 			{
-				if (OneHandedOffhandBonus && !flag3)
+				if (OneHandedOffhandBonus && !(flag3 || flag4))
                 {
 					int offHandBonus = 2;
 					evt.AddModifier(offHandBonus, base.Fact, ModifierDescriptor.UntypedStackable);
@@ -78,6 +79,22 @@ namespace MythicArcanist.NewComponents
 				if (UnityModManager.modEntries.Where(mod => mod.Info.Id.Equals("TomeOfTheFirebird") && mod.Enabled && !mod.ErrorOnLoading).Any())
 				{
 					blueprint = BlueprintTools.GetBlueprintReference<BlueprintFeatureReference>("40f3f714d17347fa9f078d751b777f05"); //TomeOfTheFirebird:ProdigiousTWF
+				}
+				if (blueprint == null)
+				{
+					return null;
+				}
+				return blueprint.Get();
+			}
+		}
+		public BlueprintFeature DCProdigiousTwoWeaponFighting
+		{
+			get
+			{
+				BlueprintFeatureReference blueprint = null;
+				if (UnityModManager.modEntries.Where(mod => mod.Info.Id.Equals("DarkCodex") && mod.Enabled && !mod.ErrorOnLoading).Any())
+				{
+					BlueprintTools.GetBlueprintReference<BlueprintFeatureReference>("5725b7af6cd64bb8b53d6535f9de0161"); //DarkCodex:ProdigiousTwoWeaponFighting
 				}
 				if (blueprint == null)
 				{
