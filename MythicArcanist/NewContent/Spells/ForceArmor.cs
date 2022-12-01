@@ -67,10 +67,11 @@ namespace MythicArcanist.NewContent.Spells
             Spell.AddToSpellList(SpellTools.SpellList.BardSpellList, 2);
             Spell.AddToSpellList(SpellTools.SpellList.WizardSpellList, 2);
             var Scroll = Utilities.ItemTools.CreateScroll(ThisModContext, Spell, ScrollIcon);
-            Utilities.ItemTools.AddToVendor(ThisModContext , Scroll, 2, BlueprintSharedVendorTables.Scrolls_DefendersHeartVendorTable);
-            Utilities.ItemTools.AddToVendor(ThisModContext, Scroll, 4, BlueprintSharedVendorTables.WarCamp_ScrollVendorClericTable);
-            Utilities.ItemTools.AddToVendor(ThisModContext, Scroll, 4, BlueprintSharedVendorTables.Scroll_Chapter3VendorTable);
-            Utilities.ItemTools.AddToVendor(ThisModContext, Scroll, 7, BlueprintSharedVendorTables.Scroll_Chapter5VendorTable);
+            VenderTools.AddScrollToLeveledVenders(Scroll);
+            //Utilities.ItemTools.AddToVendor(ThisModContext , Scroll, 2, BlueprintSharedVendorTables.Scrolls_DefendersHeartVendorTable);
+            //Utilities.ItemTools.AddToVendor(ThisModContext, Scroll, 4, BlueprintSharedVendorTables.WarCamp_ScrollVendorClericTable);
+            //Utilities.ItemTools.AddToVendor(ThisModContext, Scroll, 4, BlueprintSharedVendorTables.Scroll_Chapter3VendorTable);
+            //Utilities.ItemTools.AddToVendor(ThisModContext, Scroll, 7, BlueprintSharedVendorTables.Scroll_Chapter5VendorTable);
         }
     }
 }

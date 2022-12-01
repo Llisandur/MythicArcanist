@@ -81,9 +81,10 @@ namespace MythicArcanist.NewContent.Spells
             Spell.AddToSpellList(SpellTools.SpellList.LichWizardSpelllist, 9);
             Spell.AddToSpellList(SpellTools.SpellList.WitchSpellList, 9);
             var Scroll = Utilities.ItemTools.CreateScroll(ThisModContext, Spell, ScrollIcon);
-            Utilities.ItemTools.AddToVendor(ThisModContext, Scroll, 1, BlueprintSharedVendorTables.WarCamp_REVendorTableMagic);
-            Utilities.ItemTools.AddToVendor(ThisModContext, Scroll, 2, BlueprintSharedVendorTables.Scroll_Chapter3VendorTable);
-            Utilities.ItemTools.AddToVendor(ThisModContext, Scroll, 3, BlueprintSharedVendorTables.Scroll_Chapter5VendorTable);
+            VenderTools.AddScrollToLeveledVenders(Scroll, 1);
+            //Utilities.ItemTools.AddToVendor(ThisModContext, Scroll, 1, BlueprintSharedVendorTables.WarCamp_REVendorTableMagic);
+            //Utilities.ItemTools.AddToVendor(ThisModContext, Scroll, 2, BlueprintSharedVendorTables.Scroll_Chapter3VendorTable);
+            //Utilities.ItemTools.AddToVendor(ThisModContext, Scroll, 3, BlueprintSharedVendorTables.Scroll_Chapter5VendorTable);
         }
     }
 }

@@ -411,15 +411,19 @@ namespace MythicArcanist.NewContent.Spells
                 };
             });
 
+            //Need to add shield spell missile block. 9c0fa9b438ada3f43864be8dd8b3e741 //MageShieldBuff
+            //384ed9a25d1d79c47b9bbfd31309f00e //ForceShieldFeature
+
 
             if (ThisModContext.ThirdParty.Spells.IsDisabled("MagicMissileMastered")) { return; }
             Spell.AddToSpellList(SpellTools.SpellList.BloodragerSpellList, 5);
             Spell.AddToSpellList(SpellTools.SpellList.MagusSpellList, 5);
             Spell.AddToSpellList(SpellTools.SpellList.WizardSpellList, 5);
             var Scroll = Utilities.ItemTools.CreateScroll(ThisModContext, Spell, ScrollIcon);
-            Utilities.ItemTools.AddToVendor(ThisModContext, Scroll, 2, BlueprintSharedVendorTables.WarCamp_ScrollVendorClericTable);
-            Utilities.ItemTools.AddToVendor(ThisModContext, Scroll, 3, BlueprintSharedVendorTables.Scroll_Chapter3VendorTable);
-            Utilities.ItemTools.AddToVendor(ThisModContext, Scroll, 4, BlueprintSharedVendorTables.Scroll_Chapter5VendorTable);
+            VenderTools.AddScrollToLeveledVenders(Scroll, 2);
+            //Utilities.ItemTools.AddToVendor(ThisModContext, Scroll, 2, BlueprintSharedVendorTables.WarCamp_ScrollVendorClericTable);
+            //Utilities.ItemTools.AddToVendor(ThisModContext, Scroll, 3, BlueprintSharedVendorTables.Scroll_Chapter3VendorTable);
+            //Utilities.ItemTools.AddToVendor(ThisModContext, Scroll, 4, BlueprintSharedVendorTables.Scroll_Chapter5VendorTable);
         }
     }
 }
