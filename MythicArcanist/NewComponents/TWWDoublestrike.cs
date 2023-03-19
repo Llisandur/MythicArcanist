@@ -17,29 +17,6 @@ namespace MythicArcanist.NewComponents
     {
         /*Doublestrike (Ex): At 9th level, a two-weapon warrior may, as a standard action, make one attack with both his primary and secondary weapons. 
          The penalties for attacking with two weapons apply normally.*/
-        //private class EventHandlers : IDisposable
-        //{
-        //    private readonly List<object> m_Handlers = new List<object>();
-        //    public void Add(object handler)
-        //    {
-        //        m_Handlers.Add(handler);
-        //    }
-        //    public EventHandlers Activate()
-        //    {
-        //        foreach (object handler in m_Handlers)
-        //        {
-        //            EventBus.Subscribe(handler);
-        //        }
-        //        return this;
-        //    }
-        //    public void Dispose()
-        //    {
-        //        foreach (object handler in m_Handlers)
-        //        {
-        //            EventBus.Unsubscribe(handler);
-        //        }
-        //    }
-        //}
         public override IEnumerator<AbilityDeliveryTarget> Deliver(AbilityExecutionContext context, TargetWrapper target)
         {
             UnitEntityData maybeCaster = context.MaybeCaster;
