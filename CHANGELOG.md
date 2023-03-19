@@ -1,3 +1,6 @@
+## Version 1.3.4
+* Fix Two-weapon Warrior for game version 2.1.
+
 ## Version 1.3.3
 * Change spells to use TTT vendor injector.
 * Fixed scroll creation code to correctly parse spell level.
