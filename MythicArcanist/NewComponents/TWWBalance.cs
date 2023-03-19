@@ -94,7 +94,7 @@ namespace MythicArcanist.NewComponents
 				BlueprintFeatureReference blueprint = null;
 				if (UnityModManager.modEntries.Where(mod => mod.Info.Id.Equals("DarkCodex") && mod.Enabled && !mod.ErrorOnLoading).Any())
 				{
-					BlueprintTools.GetBlueprintReference<BlueprintFeatureReference>("5725b7af6cd64bb8b53d6535f9de0161"); //DarkCodex:ProdigiousTwoWeaponFighting
+                    blueprint = BlueprintTools.GetBlueprintReference<BlueprintFeatureReference>("5725b7af6cd64bb8b53d6535f9de0161"); //DarkCodex:ProdigiousTwoWeaponFighting
 				}
 				if (blueprint == null)
 				{

@@ -17,29 +17,6 @@ namespace MythicArcanist.NewComponents
     {
         /*Doublestrike (Ex): At 9th level, a two-weapon warrior may, as a standard action, make one attack with both his primary and secondary weapons. 
          The penalties for attacking with two weapons apply normally.*/
-        private class EventHandlers : IDisposable
-        {
-            private readonly List<object> m_Handlers = new List<object>();
-            public void Add(object handler)
-            {
-                m_Handlers.Add(handler);
-            }
-            public EventHandlers Activate()
-            {
-                foreach (object handler in m_Handlers)
-                {
-                    EventBus.Subscribe(handler);
-                }
-                return this;
-            }
-            public void Dispose()
-            {
-                foreach (object handler in m_Handlers)
-                {
-                    EventBus.Unsubscribe(handler);
-                }
-            }
-        }
         public override IEnumerator<AbilityDeliveryTarget> Deliver(AbilityExecutionContext context, TargetWrapper target)
         {
             UnitEntityData maybeCaster = context.MaybeCaster;
@@ -72,8 +49,8 @@ namespace MythicArcanist.NewComponents
             RuleAttackWithWeapon rule2 = new RuleAttackWithWeapon(maybeCaster, targetUnit, secondWeapon, 0);
             using (eventHandlers.Activate())
             {
-                context.TriggerRule<RuleAttackWithWeapon>(rule);
-                context.TriggerRule<RuleAttackWithWeapon>(rule2);
+                context.TriggerRule(rule);
+                context.TriggerRule(rule2);
             }
             yield return new AbilityDeliveryTarget(target);
             yield break;
