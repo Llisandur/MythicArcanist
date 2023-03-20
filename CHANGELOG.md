@@ -1,3 +1,6 @@
+## Version 1.3.4a
+* Version update because someone else recompiled and released a version with the same number as the actual update.
+
 ## Version 1.3.4
 * Fix Two-weapon Warrior for game version 2.1.
 
