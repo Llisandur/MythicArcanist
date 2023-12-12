@@ -8,13 +8,13 @@ using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.UnitLogic.Mechanics.Actions;
 using Kingmaker.UnitLogic.Mechanics.Components;
-using Kingmaker.Designers.EventConditionActionSystem.Actions;
 using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.Designers.Mechanics.Recommendations;
 using Kingmaker.Utility;
 using TabletopTweaks.Core.Utilities;
 using static MythicArcanist.Main;
 using MythicArcanist.Utilities;
+using Kingmaker.UnitLogic.Buffs.Components;
 
 namespace MythicArcanist.NewContent.Spells
 {
@@ -46,10 +46,13 @@ namespace MythicArcanist.NewContent.Spells
             });
             var BuffMythic = SpellCopyBuffMythic.CreateCopy(ThisModContext, $"{SpellName}BuffMythic", bp =>
             {
+                bp.SetNameDescription(ThisModContext , SpellDisplay, SpellDesc);
                 bp.m_Icon = Icon; 
                 bp.GetComponent<ContextRankConfig>().m_StepLevel = SpellValue;
+                bp.GetComponent<SuppressBuffs>().m_Buffs = new BlueprintBuffReference[] { Buff.ToReference<BlueprintBuffReference>() };
             }
             );
+            Buff.GetComponent<AddBuffActions>().Dispose.Actions.OfType<ContextActionRemoveBuff>().FirstOrDefault().m_Buff = BuffMythic.ToReference<BlueprintBuffReference>();
 
             var Spell = SpellCopy.CreateCopy(ThisModContext, SpellName, bp =>
             {
@@ -63,20 +66,17 @@ namespace MythicArcanist.NewContent.Spells
                 });
                 bp.GetComponent<AbilityEffectRunAction>()
                     .Actions.Actions
-                    .OfType<Conditional>().FirstOrDefault()
-                    .IfTrue.Actions
-                    .OfType<ContextActionApplyBuff>().FirstOrDefault()
-                    .m_Buff = BuffMythic.ToReference<BlueprintBuffReference>();
-                bp.GetComponent<AbilityEffectRunAction>()
-                    .Actions.Actions
-                    .OfType<Conditional>().FirstOrDefault()
-                    .IfFalse.Actions
                     .OfType<ContextActionApplyBuff>().FirstOrDefault()
                     .m_Buff = Buff.ToReference<BlueprintBuffReference>();
+                bp.GetComponent<AbilityEffectRunAction>()
+                    .Actions.Actions
+                    .OfType<ContextActionRemoveBuff>().FirstOrDefault()
+                    .m_Buff = BuffMythic.ToReference<BlueprintBuffReference>();
             });
 
 
             if (ThisModContext.ThirdParty.Spells.IsDisabled("MageArmor2")) {  return; }
+            SpellToolsMA.PatchArchmageArmor(ThisModContext, Spell, BuffMythic);
             Spell.AddToSpellList(SpellTools.SpellList.BloodragerSpellList, 3);
             Spell.AddToSpellList(SpellTools.SpellList.WizardSpellList, 4);
             Spell.AddToSpellList(SpellTools.SpellList.LichWizardSpelllist, 4);
